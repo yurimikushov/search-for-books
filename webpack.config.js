@@ -1,5 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const isDevMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: './src/index.js',
@@ -16,13 +19,11 @@ module.exports = {
       {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: jsLoaders(),
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: cssLoaders(),
       },
     ],
   },
@@ -31,5 +32,33 @@ module.exports = {
       template: 'public/index.html',
       inject: 'body',
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash:8].bundle.css',
+      chunkFilename: '[id].[hash:8].css',
+      ignoreOrder: false,
+    }),
   ],
+}
+
+function jsLoaders() {
+  return [
+    {
+      loader: 'babel-loader',
+    },
+  ]
+}
+
+function cssLoaders() {
+  return [
+    isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+    'css-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        postcssOptions: {
+          plugins: ['autoprefixer'],
+        },
+      },
+    },
+  ]
 }

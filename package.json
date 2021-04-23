@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "App for book searching 📚",
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "cross-env NODE_ENV=development webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,12 +24,17 @@
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "eslint": "^7.24.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.23.2",
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.5.0",
+    "postcss": "^8.2.12",
+    "postcss-loader": "^5.2.0",
     "prettier": "^2.2.1",
     "style-loader": "^2.0.0",
     "stylelint": "^13.12.0",
