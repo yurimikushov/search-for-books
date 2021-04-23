@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: '[name].[hash:8].bundle.js',
     path: path.resolve(__dirname, 'build'),
+    clean: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
