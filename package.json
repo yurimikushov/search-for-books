@@ -1,0 +1,27 @@
+{
+  "name": "search-for-books",
+  "version": "0.1.0",
+  "description": "App for book searching 📚",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurimikushov/search-for-books.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yurimikushov/search-for-books/issues"
+  },
+  "homepage": "https://github.com/yurimikushov/search-for-books#readme",
+  "author": "Mikushov Yuri",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^21.0.0"
+  }
+}
