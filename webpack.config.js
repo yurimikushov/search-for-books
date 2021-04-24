@@ -17,7 +17,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',
-  optimization: optimizators(),
+  optimization: optimization(),
   devServer: {
     port: 9000,
     hot: isDevMode,
@@ -49,7 +49,7 @@ module.exports = {
   ],
 }
 
-function optimizators() {
+function optimization() {
   const config = {}
 
   if (!isDevMode) {
