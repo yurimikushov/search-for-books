@@ -21,6 +21,7 @@ module.exports = {
   devServer: {
     port: 9000,
     hot: isDevMode,
+    open: true,
   },
   target: 'web',
   module: {
@@ -43,8 +44,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:8].bundle.css',
-      chunkFilename: '[id].[hash:8].css',
-      ignoreOrder: false,
     }),
   ],
 }
