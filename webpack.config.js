@@ -17,6 +17,11 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   optimization: optimizators(),
+  devServer: {
+    port: 9000,
+    hot: isDevMode,
+  },
+  target: 'web',
   module: {
     rules: [
       {
@@ -66,8 +71,18 @@ function jsLoaders() {
 }
 
 function cssLoaders() {
+  const cssInjector = isDevMode
+    ? 'style-loader'
+    : {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          hmr: isDevMode,
+          reloadAll: true,
+        },
+      }
+
   return [
-    isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+    cssInjector,
     'css-loader',
     {
       loader: 'postcss-loader',
