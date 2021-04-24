@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const isDevMode = process.env.NODE_ENV !== 'production'
 
@@ -14,6 +16,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  optimization: optimizators(),
   module: {
     rules: [
       {
@@ -38,6 +41,17 @@ module.exports = {
       ignoreOrder: false,
     }),
   ],
+}
+
+function optimizators() {
+  const config = {}
+
+  if (!isDevMode) {
+    config.minimize = true
+    config.minimizer = [new TerserPlugin(), new CssMinimizerPlugin()]
+  }
+
+  return config
 }
 
 function jsLoaders() {
