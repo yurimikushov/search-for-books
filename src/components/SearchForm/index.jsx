@@ -8,6 +8,7 @@ const SearchForm = () => {
   const formRef = useRef()
   const inputBoxRef = useRef()
 
+  const [showSuggests, setShowSuggests] = useState(false)
   const dynamicSuggestsProps = useDynamicSuggestsParams(formRef, inputBoxRef)
 
   const [suggests, setSuggests] = useState([])
@@ -16,8 +17,8 @@ const SearchForm = () => {
     e.preventDefault()
 
     setTimeout(() => {
+      setShowSuggests(true)
       setSuggests([
-        ...suggests,
         'Война и мир',
         '1984',
         'Золотая рыбка',
@@ -38,7 +39,13 @@ const SearchForm = () => {
           Найти
         </button>
       </form>
-      <DynamicSuggests suggests={suggests} {...dynamicSuggestsProps} />
+      {showSuggests && (
+        <DynamicSuggests
+          suggests={suggests}
+          {...dynamicSuggestsProps}
+          onClose={() => setShowSuggests(false)}
+        />
+      )}
     </>
   )
 }
