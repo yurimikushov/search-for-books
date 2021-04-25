@@ -1,0 +1,14 @@
+.dynamic-suggests {
+  list-style: none;
+}
+
+.dynamic-suggests__item {
+  padding: 7px 15px;
+  margin: 7px 0;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.dynamic-suggests__item:hover {
+  background-color: var(--color-selected-suggest);
+}

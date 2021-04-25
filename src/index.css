@@ -4,8 +4,9 @@
 }
 
 :root {
-  --color-search-form: #275efe;
   --color-bg: #fff;
+  --color-search-form: #275efe;
+  --color-selected-suggest: #c4d3ff;
   --font-size: 16px;
 }
 

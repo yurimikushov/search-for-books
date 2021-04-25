@@ -5,10 +5,6 @@ import './App.css'
 const App = () => (
   <>
     <SearchForm />
-    <div
-      className='dynamic-suggest-popup'
-      style={{ position: 'absolute' }}
-    ></div>
   </>
 )
 
