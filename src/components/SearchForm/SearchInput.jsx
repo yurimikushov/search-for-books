@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const SearchInput = React.forwardRef((_, inputBoxRef) => {
+  const inputRef = useRef()
   const [value, setValue] = useState('')
 
   const onChangeValue = (e) => {
@@ -10,11 +11,13 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
   const clearInput = (e) => {
     e.preventDefault()
     setValue('')
+    inputRef.current.focus()
   }
 
   return (
     <span ref={inputBoxRef} className='search-form__input-box'>
       <input
+        ref={inputRef}
         className='search-form__input'
         type='text'
         value={value}
