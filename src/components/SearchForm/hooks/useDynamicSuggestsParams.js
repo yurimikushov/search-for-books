@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useDynamicSuggestsParams = (formRef, inputRef) => {
+const useDynamicSuggestsParams = (formRef, inputBoxRef) => {
   const [dynamicSuggestsProps, setDynamicSuggestsProps] = useState({
     top: 0,
     left: 0,
@@ -13,7 +13,7 @@ const useDynamicSuggestsParams = (formRef, inputRef) => {
     setDynamicSuggestsProps({
       top: bottom,
       left,
-      width: inputRef.current.clientWidth,
+      width: inputBoxRef.current.clientWidth,
     })
   }
 

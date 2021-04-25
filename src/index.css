@@ -19,3 +19,16 @@ body {
   height: 100vh;
   background-color: var(--color-bg);
 }
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:focus {
+  outline: none;
+}

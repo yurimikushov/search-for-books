@@ -1,13 +1,14 @@
 import React, { useRef, useState } from 'react'
+import SearchInput from './SearchInput'
 import DynamicSuggests from '../DynamicSuggests'
 import { useDynamicSuggestsParams } from './hooks'
 import './index.css'
 
 const SearchForm = () => {
   const formRef = useRef()
-  const inputRef = useRef()
+  const inputBoxRef = useRef()
 
-  const dynamicSuggestsProps = useDynamicSuggestsParams(formRef, inputRef)
+  const dynamicSuggestsProps = useDynamicSuggestsParams(formRef, inputBoxRef)
 
   const [suggests, setSuggests] = useState([])
 
@@ -28,13 +29,7 @@ const SearchForm = () => {
   return (
     <>
       <form ref={formRef} className='search-form'>
-        <input
-          ref={inputRef}
-          className='search-form__input'
-          type='text'
-          placeholder='Введите название книги'
-          autoFocus
-        />
+        <SearchInput ref={inputBoxRef} />
         <button
           className='search-form__search-btn'
           type='submit'
