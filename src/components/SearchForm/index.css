@@ -32,13 +32,15 @@
   opacity: 0;
   transform: translateY(-50%);
   transition: opacity 0.1s;
+  visibility: hidden;
 }
 
 .search-form__clear-btn[data-visible=true] {
   opacity: 0.7;
+  visibility: visible;
 }
 
-.search-form__clear-btn:hover {
+.search-form__clear-btn[data-visible=true]:hover {
   opacity: 1;
 }
 
