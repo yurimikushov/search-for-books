@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const isDevMode = process.env.NODE_ENV !== 'production'
 
@@ -44,6 +45,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:8].bundle.css',
+    }),
+    new CopyPlugin({
+      patterns: ['public/favicon.png'],
     }),
   ],
 }
