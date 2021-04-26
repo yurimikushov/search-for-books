@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import SearchInput from './SearchInput'
-import DynamicSuggests from '../DynamicSuggests'
-import { useDynamicSuggestsParams } from './hooks'
+import SuggestsPopup from '../SuggestsPopup'
+import { useSuggestsPopupProps } from './hooks'
 import './index.css'
 
 const SearchForm = () => {
@@ -9,7 +9,7 @@ const SearchForm = () => {
   const inputBoxRef = useRef()
 
   const [showSuggests, setShowSuggests] = useState(false)
-  const dynamicSuggestsProps = useDynamicSuggestsParams(formRef, inputBoxRef)
+  const suggestsPopupProps = useSuggestsPopupProps(formRef, inputBoxRef)
 
   const [suggests, setSuggests] = useState([])
 
@@ -40,9 +40,9 @@ const SearchForm = () => {
         </button>
       </form>
       {showSuggests && (
-        <DynamicSuggests
+        <SuggestsPopup
           suggests={suggests}
-          {...dynamicSuggestsProps}
+          {...suggestsPopupProps}
           onClose={() => setShowSuggests(false)}
         />
       )}

@@ -1,1 +1,1 @@
-export { useDynamicSuggestsParams } from './useDynamicSuggestsParams'
+export { useSuggestsPopupProps } from './useSuggestsPopupProps'

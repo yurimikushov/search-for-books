@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
 import './index.css'
 
-const DynamicSuggests = ({ suggests, top, left, width, onClose }) => {
+const SuggestsPopup = ({ suggests, top, left, width, onClose }) => {
   const suggestsRef = useRef()
 
   useEffect(() => {
@@ -22,20 +22,20 @@ const DynamicSuggests = ({ suggests, top, left, width, onClose }) => {
   return createPortal(
     <ul
       ref={suggestsRef}
-      className='dynamic-suggests'
+      className='suggests-popup'
       style={{ position: 'absolute', top, left, width }}
     >
       {suggests.map((suggest, id) => (
-        <li key={id} className='dynamic-suggests__item'>
+        <li key={id} className='suggests-popup__item'>
           {suggest}
         </li>
       ))}
     </ul>,
-    document.querySelector('.dynamic-suggests-popup')
+    document.querySelector('.suggests-popup-container')
   )
 }
 
-DynamicSuggests.propTypes = {
+SuggestsPopup.propTypes = {
   suggests: PropTypes.array.isRequired,
   top: PropTypes.number.isRequired,
   left: PropTypes.number.isRequired,
@@ -43,4 +43,4 @@ DynamicSuggests.propTypes = {
   onClose: PropTypes.func.isRequired,
 }
 
-export default DynamicSuggests
+export default SuggestsPopup
