@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import SearchInput from './SearchInput'
+import SearchButton from './SearchButton'
 import SuggestsPopup from '../SuggestsPopup'
 import { useSuggestsPopupProps } from './hooks'
 import './index.css'
@@ -13,17 +14,17 @@ const SearchForm = () => {
 
   const [suggests, setSuggests] = useState([])
 
-  const searchHeandler = (e) => {
+  const onSearchHeandler = (e) => {
     e.preventDefault()
 
     setTimeout(() => {
-      setShowSuggests(true)
       setSuggests([
         'Война и мир',
         '1984',
         'Золотая рыбка',
         'Двухсотлетний человек',
       ])
+      setShowSuggests(true)
     }, 250)
   }
 
@@ -31,13 +32,7 @@ const SearchForm = () => {
     <>
       <form ref={formRef} className='search-form'>
         <SearchInput ref={inputBoxRef} />
-        <button
-          className='search-form__search-btn'
-          type='submit'
-          onClick={searchHeandler}
-        >
-          Найти
-        </button>
+        <SearchButton onSearch={onSearchHeandler} />
       </form>
       {showSuggests && (
         <SuggestsPopup
