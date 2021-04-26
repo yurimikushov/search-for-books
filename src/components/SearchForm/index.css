@@ -32,19 +32,21 @@
   background-image: url(../../../public/img/close.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  opacity: 0;
   transform: translateY(-50%);
   transition: opacity 0.1s;
-  visibility: hidden;
 }
 
-.search-form__clear-btn[data-visible=true] {
+.search-form__clear-btn_visible {
   opacity: 0.7;
   visibility: visible;
 }
 
-.search-form__clear-btn[data-visible=true]:hover {
+.search-form__clear-btn_visible:hover {
   opacity: 1;
+}
+
+.search-form__clear-btn_hidden {
+  visibility: hidden;
 }
 
 .search-form__search-btn {

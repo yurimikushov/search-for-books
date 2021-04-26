@@ -26,10 +26,14 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
         autoFocus
       />
       <button
-        className='search-form__clear-btn'
+        className={
+          'search-form__clear-btn ' +
+          (value.length > 0
+            ? 'search-form__clear-btn_visible'
+            : 'search-form__clear-btn_hidden')
+        }
         type='reset'
         onClick={clearInput}
-        data-visible={value.length > 0}
       >
         &nbsp;
       </button>
