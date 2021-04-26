@@ -1,0 +1,1 @@
+export const SET_SUGGESTS = 'SET_SUGGESTS'

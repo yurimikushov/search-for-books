@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useSetSuggests, useSuggests } from '../../store/hooks'
 import SearchInput from './SearchInput'
 import SearchButton from './SearchButton'
 import SuggestsPopup from '../SuggestsPopup'
@@ -12,7 +13,8 @@ const SearchForm = () => {
   const [showSuggests, setShowSuggests] = useState(false)
   const suggestsPopupProps = useSuggestsPopupProps(formRef, inputBoxRef)
 
-  const [suggests, setSuggests] = useState([])
+  const setSuggests = useSetSuggests()
+  const suggests = useSuggests()
 
   const onSearchHeandler = (e) => {
     e.preventDefault()
