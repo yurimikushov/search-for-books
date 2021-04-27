@@ -5,11 +5,11 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
   const inputRef = useRef()
   const [searchQuery, setSearchQuery] = useSearchQuery()
 
-  const onChangeSearchQueryHandler = (e) => {
+  const onChangeSearchQuery = (e) => {
     setSearchQuery(e.target.value)
   }
 
-  const onSearchHandler = (e) => {
+  const onClearSearchQuery = (e) => {
     e.preventDefault()
     setSearchQuery('')
     inputRef.current.focus()
@@ -22,7 +22,7 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
         className='search-form__input'
         type='text'
         value={searchQuery}
-        onChange={onChangeSearchQueryHandler}
+        onChange={onChangeSearchQuery}
         placeholder='Введите название книги'
         autoFocus
       />
@@ -34,7 +34,7 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
             : 'search-form__clear-btn_hidden')
         }
         type='reset'
-        onClick={onSearchHandler}
+        onClick={onClearSearchQuery}
       >
         &nbsp;
       </button>
