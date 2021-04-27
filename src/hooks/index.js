@@ -1,0 +1,1 @@
+export { useFetchSuggests } from './useFetchSuggests'
