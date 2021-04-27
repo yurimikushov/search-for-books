@@ -1,16 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
+import { useSearchQuery } from '../../store/hooks'
 
 const SearchInput = React.forwardRef((_, inputBoxRef) => {
   const inputRef = useRef()
-  const [value, setValue] = useState('')
+  const [searchQuery, setSearchQuery] = useSearchQuery()
 
-  const onChangeHandler = (e) => {
-    setValue(e.target.value)
+  const onChangeSearchQueryHandler = (e) => {
+    setSearchQuery(e.target.value)
   }
 
-  const onClearHandler = (e) => {
+  const onSearchHandler = (e) => {
     e.preventDefault()
-    setValue('')
+    setSearchQuery('')
     inputRef.current.focus()
   }
 
@@ -20,20 +21,20 @@ const SearchInput = React.forwardRef((_, inputBoxRef) => {
         ref={inputRef}
         className='search-form__input'
         type='text'
-        value={value}
-        onChange={onChangeHandler}
+        value={searchQuery}
+        onChange={onChangeSearchQueryHandler}
         placeholder='Введите название книги'
         autoFocus
       />
       <button
         className={
           'search-form__clear-btn ' +
-          (value.length > 0
+          (searchQuery.length > 0
             ? 'search-form__clear-btn_visible'
             : 'search-form__clear-btn_hidden')
         }
         type='reset'
-        onClick={onClearHandler}
+        onClick={onSearchHandler}
       >
         &nbsp;
       </button>
