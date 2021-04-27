@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
-import { useSetSuggests, useSuggests } from '../../store/hooks'
+import React, { useRef } from 'react'
+import { useFetchSuggests } from '../../store/hooks'
 import SearchInput from './SearchInput'
 import SearchButton from './SearchButton'
 import SuggestsPopup from '../SuggestsPopup'
@@ -9,25 +9,13 @@ import './index.css'
 const SearchForm = () => {
   const formRef = useRef()
   const inputBoxRef = useRef()
-
-  const [showSuggests, setShowSuggests] = useState(false)
   const suggestsPopupProps = useSuggestsPopupProps(formRef, inputBoxRef)
 
-  const setSuggests = useSetSuggests()
-  const suggests = useSuggests()
+  const fetchSuggests = useFetchSuggests()
 
   const onSearchHeandler = (e) => {
     e.preventDefault()
-
-    setTimeout(() => {
-      setSuggests([
-        'Война и мир',
-        '1984',
-        'Золотая рыбка',
-        'Двухсотлетний человек',
-      ])
-      setShowSuggests(true)
-    }, 250)
+    fetchSuggests('war and peace')
   }
 
   return (
@@ -36,13 +24,7 @@ const SearchForm = () => {
         <SearchInput ref={inputBoxRef} />
         <SearchButton onSearch={onSearchHeandler} />
       </form>
-      {showSuggests && (
-        <SuggestsPopup
-          suggests={suggests}
-          {...suggestsPopupProps}
-          onClose={() => setShowSuggests(false)}
-        />
-      )}
+      <SuggestsPopup {...suggestsPopupProps} />
     </>
   )
 }

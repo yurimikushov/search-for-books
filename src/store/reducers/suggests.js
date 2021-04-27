@@ -1,9 +1,35 @@
-import { SET_SUGGESTS } from '../actionTypes'
+import {
+  FETCH_SUGGESTS_LOADING,
+  FETCH_SUGGESTS_SUCCESS,
+  FETCH_SUGGESTS_ERROR,
+} from '../actionTypes'
 
-const suggestsReducer = (state = [], { type, payload }) => {
+const initailState = {
+  isLoading: false,
+  suggests: [],
+  error: '',
+}
+
+const suggestsReducer = (state = initailState, { type, payload }) => {
   switch (type) {
-    case SET_SUGGESTS:
-      return payload
+    case FETCH_SUGGESTS_LOADING:
+      return {
+        isLoading: true,
+        suggests: [],
+        error: '',
+      }
+    case FETCH_SUGGESTS_SUCCESS:
+      return {
+        isLoading: false,
+        suggests: payload.suggests,
+        error: '',
+      }
+    case FETCH_SUGGESTS_ERROR:
+      return {
+        isLoading: false,
+        suggests: [],
+        error: payload.errorMessage,
+      }
     default:
       return state
   }

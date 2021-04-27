@@ -1,2 +1,2 @@
-export { useSetSuggests } from './useSetSuggests'
+export { useFetchSuggests } from './useFetchSuggests'
 export { useSuggests } from './useSuggests'
