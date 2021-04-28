@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import { fetchSuggests as fetchSuggestsFromServer } from '../../api'
+import { fetchBooks as fetchBooksFromServer } from '../../api'
 import {
   FETCH_SUGGESTS_LOADING,
   FETCH_SUGGESTS_SUCCESS,
@@ -32,7 +32,7 @@ const fetchSuggests = (query) => async (dispatch) => {
   try {
     const suggests = []
 
-    const { docs } = await fetchSuggestsFromServer(query)
+    const { docs } = await fetchBooksFromServer(query)
 
     for (let i = 0; i < Math.min(docs.length, MAX_NUM_OF_SUGGESTS); i++) {
       suggests.push({
