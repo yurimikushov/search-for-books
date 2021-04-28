@@ -10,9 +10,10 @@ const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
 })
 
-const fetchBooksSuccess = (books) => ({
+const fetchBooksSuccess = ({ numFound, books }) => ({
   type: FETCH_BOOKS_SUCCESS,
   payload: {
+    numFound,
     books,
   },
 })
@@ -28,7 +29,7 @@ const fetchBooks = (query) => async (dispatch) => {
   dispatch(fetchBooksLoading())
 
   try {
-    const { docs } = await fetchBooksFromServer(query)
+    const { numFound, docs } = await fetchBooksFromServer(query)
 
     const makeImgUrl = (isbn) => {
       return `http://covers.openlibrary.org/b/isbn/${isbn}.jpg`
@@ -44,7 +45,7 @@ const fetchBooks = (query) => async (dispatch) => {
       })
     )
 
-    dispatch(fetchBooksSuccess(books))
+    dispatch(fetchBooksSuccess({ numFound, books }))
   } catch (err) {
     dispatch(fetchBooksError(err.message))
   }
