@@ -23,6 +23,7 @@
 .found-book__cover {
   width: 200px;
   height: 200px;
+  background-color: rgb(240 240 240);
   background-position: center;
   background-size: cover;
 }
