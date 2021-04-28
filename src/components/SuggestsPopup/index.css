@@ -1,4 +1,5 @@
 .suggests-popup {
+  background-color: var(--color-bg);
   list-style: none;
 }
 
