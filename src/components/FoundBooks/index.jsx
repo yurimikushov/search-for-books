@@ -1,5 +1,7 @@
 import React from 'react'
 import { useFoundBooks } from '../../store/hooks'
+import FoundBook from './FoundBook'
+import './index.css'
 
 const FoundBooks = () => {
   const { isLoading, books } = useFoundBooks()
@@ -13,23 +15,9 @@ const FoundBooks = () => {
   }
 
   return (
-    <div>
-      {books.map(({ id, img, title, author }) => (
-        <div
-          style={{
-            display: 'inline-block',
-            padding: '5px',
-            height: '150px',
-            width: '100px',
-            border: '1px solid black',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <img key={id} src={img} alt={title} style={{ height: '100px' }} />
-            <span>{title || 'unknown'}</span>
-            <span>{author || 'unknown'}</span>
-          </div>
-        </div>
+    <div className='found-books'>
+      {books.map(({ id, title, author, img }) => (
+        <FoundBook key={id} book={{ title, author, img }} />
       ))}
     </div>
   )

@@ -1,0 +1,47 @@
+.found-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.found-book {
+  display: inline-block;
+  width: 205px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgb(18 17 36 / 4%), 0 4px 32px rgb(18 17 36 / 8%);
+  transition: box-shadow 0.3s;
+}
+
+.found-book:hover {
+  box-shadow: 0 2px 8px rgb(18 17 36 / 10%), 0 4px 32px rgb(18 17 36 / 20%);
+}
+
+.found-book__cover {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.found-book__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.found-book__title,
+.found-book__author {
+  overflow: hidden;
+  margin: 3px 0;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.found-book__title {
+  font-weight: bold;
+}
