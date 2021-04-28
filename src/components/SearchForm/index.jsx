@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useFetchSuggests } from '../../store/hooks'
+import { useSearchQuery, useFetchBooks } from '../../store/hooks'
 import SearchInput from './SearchInput'
 import SearchButton from './SearchButton'
 import SuggestsPopup from '../SuggestsPopup'
@@ -9,13 +9,15 @@ import './index.css'
 const SearchForm = () => {
   const formRef = useRef()
   const inputBoxRef = useRef()
+
   const suggestsPopupProps = useSuggestsPopupProps(formRef, inputBoxRef)
 
-  const fetchSuggests = useFetchSuggests()
+  const [searchQuery] = useSearchQuery()
+  const fetchBooks = useFetchBooks()
 
   const onSearchHeandler = (e) => {
     e.preventDefault()
-    fetchSuggests('war and peace')
+    fetchBooks(searchQuery)
   }
 
   return (
