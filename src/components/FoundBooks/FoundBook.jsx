@@ -8,8 +8,10 @@ const FoundBook = ({ book }) => (
       style={{ backgroundImage: `url(${book.img})` }}
     ></div>
     <div className='found-book__description'>
-      <span className='found-book__title'>{book.title || 'unknown'}</span>
-      <span className='found-book__author'>{book.author || 'unknown'}</span>
+      <span className='found-book__title'>{book.title}</span>
+      <span className='found-book__author'>
+        {book.author || 'Unknown author'}
+      </span>
     </div>
   </div>
 )
