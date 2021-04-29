@@ -16,8 +16,8 @@ const FoundBooks = () => {
 
   return (
     <div className='found-books'>
-      {books.map(({ id, title, author, img }) => (
-        <FoundBook key={id} book={{ title, author, img }} />
+      {books.map(({ id, ...book }) => (
+        <FoundBook key={id} book={book} />
       ))}
     </div>
   )
