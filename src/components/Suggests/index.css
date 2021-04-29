@@ -1,15 +1,16 @@
-.suggests-popup {
+.suggests {
   background-color: var(--color-bg);
   list-style: none;
 }
 
-.suggests-popup__item {
-  padding: 7px 15px;
-  margin: 7px 0;
+.suggest {
+  padding: 10px 15px;
+  background-color: var(--color-bg);
   border-radius: 3px;
   font-size: 1rem;
+  list-style: none;
 }
 
-.suggests-popup__item:hover {
+.suggest:hover {
   background-color: var(--color-selected-suggest);
 }

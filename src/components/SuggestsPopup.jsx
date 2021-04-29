@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
-import { useSuggests } from '../../store/hooks'
-import './index.css'
+import { useSuggests } from '../store/hooks'
+import Suggests from './Suggests'
 
 const SuggestsPopup = ({ top, left, width }) => {
   const suggestsRef = useRef()
@@ -10,7 +10,7 @@ const SuggestsPopup = ({ top, left, width }) => {
   const { isLoading, suggests } = useSuggests()
 
   useEffect(() => {
-    const closeHandler = ({ target }) => {
+    const onCloseHandler = ({ target }) => {
       if (!showSuggests) {
         return
       }
@@ -26,8 +26,8 @@ const SuggestsPopup = ({ top, left, width }) => {
       }
     }
 
-    window.addEventListener('click', closeHandler)
-    return () => window.removeEventListener('click', closeHandler)
+    window.addEventListener('click', onCloseHandler)
+    return () => window.removeEventListener('click', onCloseHandler)
   }, [showSuggests])
 
   useEffect(() => {
@@ -41,18 +41,13 @@ const SuggestsPopup = ({ top, left, width }) => {
   }
 
   return createPortal(
-    <ul
-      ref={suggestsRef}
-      className='suggests-popup'
+    <div
+      className='suggests-popup__content'
       style={{ position: 'absolute', top, left, width }}
     >
-      {suggests.map(({ id, title }) => (
-        <li key={id} className='suggests-popup__item'>
-          {title}
-        </li>
-      ))}
-    </ul>,
-    document.querySelector('.suggests-popup-container')
+      <Suggests ref={suggestsRef} suggests={suggests} />
+    </div>,
+    document.querySelector('.suggests-popup')
   )
 }
 
