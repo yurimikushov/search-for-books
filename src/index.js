@@ -11,5 +11,5 @@ render(
       <App />
     </React.StrictMode>
   </Provider>,
-  document.querySelector('.app-container')
+  document.querySelector('.main')
 )
