@@ -1,2 +1,2 @@
-export { useFetchSuggests } from './useFetchSuggests'
+export { useAutoFetchSuggests } from './useAutoFetchSuggests'
 export { useShowBookPopup } from './useShowBookPopup'
