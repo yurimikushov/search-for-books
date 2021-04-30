@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useSuggestPopupProps, useSuggests } from '../store/hooks'
 import SuggestsPopup from './SuggestsPopup'
+import Suggests from './Suggests'
 
 const SuggestsPopupPresenter = () => {
   const suggestsRef = useRef()
@@ -39,13 +40,9 @@ const SuggestsPopupPresenter = () => {
   }
 
   return (
-    <SuggestsPopup
-      ref={suggestsRef}
-      suggests={suggests}
-      top={top}
-      left={left}
-      width={width}
-    />
+    <SuggestsPopup top={top} left={left} width={width}>
+      <Suggests ref={suggestsRef} suggests={suggests} />
+    </SuggestsPopup>
   )
 }
 
