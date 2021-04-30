@@ -27,6 +27,10 @@ const fetchSuggestsError = (errorMessage) => ({
 })
 
 const fetchSuggests = (query) => async (dispatch) => {
+  if (query.trim().length === 0) {
+    return
+  }
+
   dispatch(fetchSuggestsLoading())
 
   try {

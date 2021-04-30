@@ -3,13 +3,12 @@ import { useSearchQuery, useFetchSuggests } from '../store/hooks'
 import { debounce } from '../utils'
 
 const useAutoFetchSuggests = () => {
+  // TODO: should abort fetching suggests after started search
   const [searchQuery] = useSearchQuery()
   const fetchSuggests = useCallback(debounce(useFetchSuggests(), 1000), [])
 
   useEffect(() => {
-    if (searchQuery.length > 0) {
-      fetchSuggests(searchQuery)
-    }
+    fetchSuggests(searchQuery)
   }, [searchQuery])
 }
 
