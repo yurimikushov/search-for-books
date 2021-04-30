@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
 import { useSearchQuery } from '../../store/hooks'
 
-const SearchInput = React.forwardRef((_, inputBoxRef) => {
+const SearchInput = forwardRef((_, inputBoxRef) => {
   const inputRef = useRef()
   const [searchQuery, setSearchQuery] = useSearchQuery()
 
