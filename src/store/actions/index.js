@@ -1,5 +1,6 @@
 export { setSearchQuery } from './setSearchQuery'
-export { fetchSuggests } from './fetchSuggests'
-export { fetchBooks } from './fetchBooks'
+export { setSuggestsPopupProps } from './setSuggestsPopupProps'
 export { showBookPopup } from './showBookPopup'
 export { hideBookPopup } from './hideBookPopup'
+export { fetchSuggests } from './fetchSuggests'
+export { fetchBooks } from './fetchBooks'

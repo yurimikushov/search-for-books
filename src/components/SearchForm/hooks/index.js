@@ -1,1 +1,1 @@
-export { useSuggestsPopupProps } from './useSuggestsPopupProps'
+export { useAutoUpdateSuggestsPopupProps } from './useAutoUpdateSuggestsPopupProps'

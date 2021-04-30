@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useSuggestPopupProps } from '../../../store/hooks'
 
-const useSuggestsPopupProps = (formRef, inputBoxRef) => {
-  const [suggestsPopupProps, setSuggestsPopupProps] = useState({
-    top: 0,
-    left: 0,
-    width: 0,
-  })
+const useAutoUpdateSuggestsPopupProps = (formRef, inputBoxRef) => {
+  const { setProps } = useSuggestPopupProps()
 
   const updateSuggestsPopupProps = () => {
     const { current: formNode } = formRef
@@ -13,7 +10,7 @@ const useSuggestsPopupProps = (formRef, inputBoxRef) => {
 
     const { left, bottom } = formNode.getBoundingClientRect()
 
-    setSuggestsPopupProps({
+    setProps({
       top: bottom,
       left,
       width: inputBoxNode.clientWidth,
@@ -28,8 +25,6 @@ const useSuggestsPopupProps = (formRef, inputBoxRef) => {
       window.removeEventListener('resize', updateSuggestsPopupProps)
     }
   }, [])
-
-  return suggestsPopupProps
 }
 
-export { useSuggestsPopupProps }
+export { useAutoUpdateSuggestsPopupProps }
