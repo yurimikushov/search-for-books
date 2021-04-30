@@ -5,7 +5,7 @@ const useSearchQuery = () => {
   const dispatch = useDispatch()
 
   return [
-    useSelector((state) => state.searchQuery),
+    useSelector(({ searchQuery }) => searchQuery),
     (query) => dispatch(setSearchQuery(query)),
   ]
 }

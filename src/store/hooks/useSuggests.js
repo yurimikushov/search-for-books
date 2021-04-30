@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 const useSuggests = () => {
-  return useSelector((state) => state.suggests)
+  return useSelector(({ suggests }) => suggests)
 }
 
 export { useSuggests }
