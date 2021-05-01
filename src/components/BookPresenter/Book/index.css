@@ -4,25 +4,27 @@
   background-color: #fff;
 }
 
-.book__cover {
+.book__cover,
+.book__cover-img {
   min-width: 300px;
   height: 500px;
+}
+
+.book__cover {
   background-color: var(--color-found-book-cover);
 }
 
 .book__cover-img {
   display: block;
-  min-width: 300px;
-  height: 500px;
 }
 
 .book__info {
+  max-width: 300px;
   margin-left: 20px;
   font-size: 1rem;
 }
 
 .book__info > :where(.book__title, .book__author, .book__isbn, .book__publication-info) {
-  max-width: 300px;
   margin-bottom: 3px;
 }
 
@@ -37,4 +39,41 @@
 
 .book__isbn {
   margin-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .book {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .book__cover,
+  .book__cover-img {
+    width: 60vw;
+    min-width: auto;
+    height: auto;
+    min-height: 60vw;
+  }
+
+  .book__info {
+    max-width: 60vw;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .book {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .book__cover,
+  .book__cover-img {
+    width: 70vw;
+  }
+
+  .book__info {
+    max-width: 70vw;
+  }
 }
