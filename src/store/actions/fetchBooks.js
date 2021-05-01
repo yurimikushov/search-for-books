@@ -1,5 +1,5 @@
-import { nanoid } from 'nanoid'
 import { fetchBooks as fetchBooksFromServer } from '../../api'
+import { docToBook } from '../../utils'
 import {
   FETCH_BOOKS_LOADING,
   FETCH_BOOKS_SUCCESS,
@@ -30,34 +30,7 @@ const fetchBooks = (query) => async (dispatch) => {
 
   try {
     const { numFound, docs } = await fetchBooksFromServer(query)
-
-    const makeImgUrl = (isbn) => {
-      return `http://covers.openlibrary.org/b/isbn/${isbn}.jpg`
-    }
-
-    const getAuthor = (authors) =>
-      authors && authors.length > 0 ? authors[0] : 'Unknown author'
-    const getImg = (isbn) =>
-      isbn && isbn.length > 0 ? makeImgUrl(isbn[0]) : ''
-    const getISBN = (isbn) => (isbn && isbn[0]) || 'Unknown'
-    const getPublisher = (publisher) =>
-      publisher && publisher.length > 0 ? publisher[0] : 'Unknown publisher'
-    const getPublishDate = (publishDate) =>
-      publishDate && publishDate.length > 0
-        ? publishDate[0]
-        : 'Publish date unknown'
-
-    const books = docs.map(
-      ({ title, author_name: authors, isbn, publisher, publish_date }) => ({
-        id: nanoid(),
-        title,
-        author: getAuthor(authors),
-        img: getImg(isbn),
-        isbn: getISBN(isbn),
-        publisher: getPublisher(publisher),
-        publishDate: getPublishDate(publish_date),
-      })
-    )
+    const books = docs.map(docToBook)
 
     dispatch(fetchBooksSuccess({ numFound, books }))
   } catch (err) {
