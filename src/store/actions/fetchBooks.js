@@ -35,13 +35,27 @@ const fetchBooks = (query) => async (dispatch) => {
       return `http://covers.openlibrary.org/b/isbn/${isbn}.jpg`
     }
 
+    const getAuthor = (authors) =>
+      authors && authors.length > 0 ? authors[0] : 'Unknown author'
+    const getImg = (isbn) =>
+      isbn && isbn.length > 0 ? makeImgUrl(isbn[0]) : ''
+    const getISBN = (isbn) => (isbn && isbn[0]) || 'Unknown'
+    const getPublisher = (publisher) =>
+      publisher && publisher.length > 0 ? publisher[0] : 'Unknown publisher'
+    const getPublishDate = (publishDate) =>
+      publishDate && publishDate.length > 0
+        ? publishDate[0]
+        : 'Publish date unknown'
+
     const books = docs.map(
-      ({ key: ref, title, author_name: authors, isbn }) => ({
+      ({ title, author_name: authors, isbn, publisher, publish_date }) => ({
         id: nanoid(),
-        ref,
         title,
-        author: authors && authors.length > 0 ? authors[0] : '',
-        img: isbn && isbn.length > 0 ? makeImgUrl(isbn[0]) : '',
+        author: getAuthor(authors),
+        img: getImg(isbn),
+        isbn: getISBN(isbn),
+        publisher: getPublisher(publisher),
+        publishDate: getPublishDate(publish_date),
       })
     )
 
