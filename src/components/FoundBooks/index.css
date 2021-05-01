@@ -6,7 +6,7 @@
 }
 
 .found-book {
-  width: 205px;
+  width: auto;
   height: auto;
   padding: 15px;
   margin: 10px;
@@ -30,14 +30,15 @@
 
 .found-book__info {
   display: flex;
+  max-width: 200px;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .found-book__title,
 .found-book__author {
   overflow: hidden;
-  margin: 3px 0;
+  margin: 1px 0;
   font-size: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -45,4 +46,15 @@
 
 .found-book__title {
   font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+  .found-book__cover {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .found-book__info {
+    max-width: 70vw;
+  }
 }
