@@ -16,8 +16,8 @@ const FoundBooks = () => {
 
   return (
     <div className='found-books'>
-      {books.map(({ id, ...book }) => (
-        <FoundBook key={id} book={book} />
+      {books.map((book) => (
+        <FoundBook key={book.id} {...book} />
       ))}
     </div>
   )
