@@ -1,6 +1,40 @@
 .book {
-  width: 400px;
-  height: 600px;
+  display: flex;
   padding: 25px;
   background-color: #fff;
+}
+
+.book__cover {
+  min-width: 300px;
+  height: 500px;
+  background-color: var(--color-found-book-cover);
+}
+
+.book__cover-img {
+  display: block;
+  min-width: 300px;
+  height: 500px;
+}
+
+.book__info {
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+.book__info > :where(.book__title, .book__author, .book__isbn, .book__publication-info) {
+  max-width: 300px;
+  margin-bottom: 3px;
+}
+
+.book__title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.book__author {
+  font-size: 1.1rem;
+}
+
+.book__isbn {
+  margin-top: 15px;
 }
