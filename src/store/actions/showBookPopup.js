@@ -1,9 +1,9 @@
 import { SHOW_BOOK_POPUP } from '../actionTypes'
 
-const showBookPopup = (book) => ({
+const showBookPopup = (bookId) => ({
   type: SHOW_BOOK_POPUP,
   payload: {
-    book,
+    bookId,
   },
 })
 

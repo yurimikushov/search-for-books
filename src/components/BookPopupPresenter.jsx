@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react'
-import { useBookPopup } from '../store/hooks'
+import { useBookPopup, useFoundBook } from '../store/hooks'
 import BookPopup from './BookPopup'
 import Book from './Book'
 
 const BookPopupPresenter = () => {
   const bookPopupRef = useRef()
-  const { show, book, onHide } = useBookPopup()
+  const { show, bookId, onHide } = useBookPopup()
+  const book = useFoundBook(bookId)
 
   useEffect(() => {
     if (!show) {

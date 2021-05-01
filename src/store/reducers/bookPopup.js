@@ -2,7 +2,7 @@ import { SHOW_BOOK_POPUP, HIDE_BOOK_POPUP } from '../actionTypes'
 
 const initialState = {
   show: false,
-  book: {},
+  bookId: '',
 }
 
 const bookPopupReducer = (state = initialState, { type, payload }) => {
@@ -11,7 +11,7 @@ const bookPopupReducer = (state = initialState, { type, payload }) => {
       return {
         ...initialState,
         show: true,
-        book: payload.book,
+        bookId: payload.bookId,
       }
     case HIDE_BOOK_POPUP:
       return {
