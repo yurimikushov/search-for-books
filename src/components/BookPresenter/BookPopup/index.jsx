@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
-import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
+import PropTypes from 'prop-types'
 import './index.css'
 
 const BookPopup = forwardRef(({ children }, bookPopupRef) =>

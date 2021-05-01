@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useSuggestPopupProps, useSuggests } from '../store/hooks'
+import { useSuggestPopupProps, useSuggests } from '../../store/hooks'
 import SuggestsPopup from './SuggestsPopup'
 import Suggests from './Suggests'
 
-const SuggestsPopupPresenter = () => {
+const SuggestsPresenter = () => {
   const suggestsRef = useRef()
   const [show, setShow] = useState(false)
   const { top, left, width } = useSuggestPopupProps()
@@ -46,4 +46,4 @@ const SuggestsPopupPresenter = () => {
   )
 }
 
-export default SuggestsPopupPresenter
+export default SuggestsPresenter

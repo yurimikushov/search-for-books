@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
-import { useBookPopup, useFoundBook } from '../store/hooks'
+import { useBookPopup, useFoundBook } from '../../store/hooks'
 import BookPopup from './BookPopup'
 import Book from './Book'
 
-const BookPopupPresenter = () => {
+const BookPresenter = () => {
   const bookPopupRef = useRef()
   const { show, bookId, onHide } = useBookPopup()
   const book = useFoundBook(bookId)
@@ -36,4 +36,4 @@ const BookPopupPresenter = () => {
   )
 }
 
-export default BookPopupPresenter
+export default BookPresenter
