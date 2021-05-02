@@ -5,7 +5,7 @@ import { debounce } from '../utils'
 const useAutoFetchSuggests = () => {
   // TODO: should abort fetching suggests after started search
   const [searchQuery] = useSearchQuery()
-  const fetchSuggests = useCallback(debounce(useFetchSuggests(), 1000), [])
+  const fetchSuggests = useFetchSuggests()
 
   useEffect(() => {
     fetchSuggests(searchQuery)
