@@ -1,5 +1,5 @@
 const createSearchURL = (query, limit, fields, page) => {
-  const url = new URL('https://openlibrary.org/search.json')
+  const url = new URL(process.env.SEARCH_API)
 
   url.searchParams.set('title', query)
   url.searchParams.set('limit', limit)
