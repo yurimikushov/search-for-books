@@ -1,5 +1,4 @@
-import { fetchBooks as fetchBooksFromServer } from '../../api'
-import { docToSuggest } from '../../utils'
+import { fetchSuggests as fetchSuggestsFromServer } from '../../api'
 import {
   FETCH_SUGGESTS_LOADING,
   FETCH_SUGGESTS_SUCCESS,
@@ -32,13 +31,7 @@ const fetchSuggests = (query) => async (dispatch) => {
   dispatch(fetchSuggestsLoading())
 
   try {
-    const { docs } = await fetchBooksFromServer(query, {
-      limit: process.env.MAX_NUM_OF_SUGGESTS,
-      fields: ['title'],
-    })
-
-    const suggests = docs.map(docToSuggest)
-
+    const suggests = await fetchSuggestsFromServer(query)
     dispatch(fetchSuggestsSuccess(suggests))
   } catch (err) {
     dispatch(fetchSuggestsError(err))
