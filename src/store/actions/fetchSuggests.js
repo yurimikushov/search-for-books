@@ -6,8 +6,6 @@ import {
   FETCH_SUGGESTS_ERROR,
 } from '../actionTypes'
 
-const MAX_NUM_OF_SUGGESTS = 5
-
 const fetchSuggestsLoading = () => ({
   type: FETCH_SUGGESTS_LOADING,
 })
@@ -35,7 +33,7 @@ const fetchSuggests = (query) => async (dispatch) => {
 
   try {
     const { docs } = await fetchBooksFromServer(query, {
-      limit: MAX_NUM_OF_SUGGESTS,
+      limit: process.env.MAX_NUM_OF_SUGGESTS,
       fields: ['title'],
     })
 
