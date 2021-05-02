@@ -30,7 +30,7 @@ const SuggestsPresenter = () => {
   }, [show])
 
   useEffect(() => {
-    if (!isLoading && suggests.length > 0) {
+    if (!isLoading) {
       onShow()
     }
   }, [isLoading])
