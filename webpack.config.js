@@ -1,4 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
+const dotenv = require('dotenv').config({
+  path: path.join(__dirname, '.env'),
+})
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -46,6 +50,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed),
+    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       inject: 'body',
