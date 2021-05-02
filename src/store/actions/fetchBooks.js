@@ -29,7 +29,11 @@ const fetchBooks = (query) => async (dispatch) => {
   dispatch(fetchBooksLoading())
 
   try {
-    const { numFound, docs } = await fetchBooksFromServer(query)
+    const { numFound, docs } = await fetchBooksFromServer(query, {
+      limit: 15,
+      fields: ['title', 'author_name', 'isbn', 'publisher', 'publish_date'],
+      page: 1,
+    })
     const books = docs.map(docToBook)
 
     dispatch(fetchBooksSuccess({ numFound, books }))

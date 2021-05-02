@@ -34,16 +34,15 @@ const fetchSuggests = (query) => async (dispatch) => {
   dispatch(fetchSuggestsLoading())
 
   try {
-    const suggests = []
+    const { docs } = await fetchBooksFromServer(query, {
+      limit: MAX_NUM_OF_SUGGESTS,
+      fields: ['title'],
+    })
 
-    const { docs } = await fetchBooksFromServer(query)
-
-    for (let i = 0; i < Math.min(docs.length, MAX_NUM_OF_SUGGESTS); i++) {
-      suggests.push({
-        id: nanoid(),
-        title: docs[i].title,
-      })
-    }
+    const suggests = docs.map(({ title }) => ({
+      id: nanoid(),
+      title,
+    }))
 
     dispatch(fetchSuggestsSuccess(suggests))
   } catch (err) {

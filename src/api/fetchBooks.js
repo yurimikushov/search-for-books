@@ -1,14 +1,24 @@
-import { normalizeQuery } from '../utils'
+import { normalizeQuery, createSearchURL } from '../utils'
 
-const fetchBooks = async (query) => {
+const initialOptions = {
+  limit: 15,
+  fields: ['title'],
+  page: 1,
+}
+
+const fetchBooks = async (query, options = {}) => {
+  const { limit, fields, page } = {
+    ...initialOptions,
+    ...options,
+  }
+
   const normalizedQuery = normalizeQuery(query)
 
   if (normalizedQuery.length === 0) {
     throw new Error('An empty search query is specified')
   }
 
-  const url = `https://openlibrary.org/search.json?title=${normalizedQuery}`
-
+  const url = createSearchURL(normalizedQuery, limit, fields.join(','), page)
   const res = await fetch(url)
 
   return await res.json()
