@@ -3,10 +3,7 @@ import { extractFirstAuthor } from './extractFirstAuthor'
 import { extractFirstISBN } from './extractFirstISBN'
 import { extractFirstPublisher } from './extractFirstPublisher'
 import { extractFirstPublishDate } from './extractFirstPublishDate'
-
-const createImgUrl = (isbn) => {
-  return process.env.BOOK_COVER_API.replace('${isbn}', isbn)
-}
+import { createBookCoverURL } from './createBookCoverURL'
 
 const docToBook = ({
   title,
@@ -25,7 +22,7 @@ const docToBook = ({
     id: nanoid(),
     title,
     author,
-    img: createImgUrl(isbn),
+    img: createBookCoverURL(isbn),
     isbn,
     publisher,
     publishDate,
