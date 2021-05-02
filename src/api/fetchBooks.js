@@ -6,8 +6,10 @@ import {
   docToBook,
 } from '../utils'
 
+const NUM_OF_BOOK_PER_PAGE = 30
+
 const options = {
-  limit: process.env.NUM_OF_BOOK_PER_PAGE,
+  limit: NUM_OF_BOOK_PER_PAGE,
   fields: ['title', 'author_name', 'isbn', 'publisher', 'publish_date'],
   page: 1,
 }
