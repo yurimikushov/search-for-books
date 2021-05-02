@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useSearchQuery, useFetchBooks } from '../../store/hooks'
+import { useSearchBooks } from '../../hooks'
 import { useAutoUpdateSuggestsPopupProps } from './hooks'
 import SearchInput from './SearchInput'
 import SearchButton from './SearchButton'
@@ -11,12 +11,11 @@ const SearchForm = () => {
 
   useAutoUpdateSuggestsPopupProps(formRef, inputBoxRef)
 
-  const [searchQuery] = useSearchQuery()
-  const fetchBooks = useFetchBooks()
+  const searchBooks = useSearchBooks()
 
   const onSearchHeandler = (e) => {
     e.preventDefault()
-    fetchBooks(searchQuery)
+    searchBooks()
   }
 
   return (
