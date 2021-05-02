@@ -1,5 +1,5 @@
-import { nanoid } from 'nanoid'
 import { fetchBooks as fetchBooksFromServer } from '../../api'
+import { docToSuggest } from '../../utils'
 import {
   FETCH_SUGGESTS_LOADING,
   FETCH_SUGGESTS_SUCCESS,
@@ -37,10 +37,7 @@ const fetchSuggests = (query) => async (dispatch) => {
       fields: ['title'],
     })
 
-    const suggests = docs.map(({ title }) => ({
-      id: nanoid(),
-      title,
-    }))
+    const suggests = docs.map(docToSuggest)
 
     dispatch(fetchSuggestsSuccess(suggests))
   } catch (err) {
