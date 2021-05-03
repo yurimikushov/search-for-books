@@ -6,7 +6,7 @@ const useFoundBook = (bookId) => {
       return null
     }
 
-    return foundBooks.books.filter((book) => book.id === bookId)[0]
+    return foundBooks.books.find((book) => book.id === bookId)
   })
 }
 
