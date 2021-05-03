@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFoundBooks } from '../../store/hooks'
+import Alert from '../Alert'
 import FoundBook from './FoundBook'
 import './index.css'
 
@@ -7,11 +8,11 @@ const FoundBooks = () => {
   const { isLoading, books } = useFoundBooks()
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <Alert title='Ищу...' />
   }
 
   if (!isLoading && books.length === 0) {
-    return <div>Нечего не найдено</div>
+    return <Alert title='Ничего не нашлось' />
   }
 
   return (
