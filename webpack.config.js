@@ -16,6 +16,7 @@ module.exports = {
   output: {
     filename: '[name].[hash:8].bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     clean: true,
   },
   resolve: {
@@ -27,6 +28,7 @@ module.exports = {
     port: 9000,
     hot: isDevMode,
     open: true,
+    historyApiFallback: true,
   },
   target: 'web',
   module: {

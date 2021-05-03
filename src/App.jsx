@@ -1,22 +1,28 @@
 import React from 'react'
-import { useAutoFetchSuggests } from './hooks'
-import SearchForm from './components/SearchForm'
-import FoundBooks from './components/FoundBooks'
-import SuggestsPresenter from './components/SuggestsPresenter'
-import BookPresenter from './components/BookPresenter'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
+import Home from './pages/Home'
+import FoundBooks from './pages/FoundBooks'
 import './App.css'
 
-const App = () => {
-  useAutoFetchSuggests()
-
-  return (
-    <>
-      <SearchForm />
-      <FoundBooks />
-      <SuggestsPresenter />
-      <BookPresenter />
-    </>
-  )
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+      <Route path='/search'>
+        <FoundBooks />
+      </Route>
+      <Route path='*'>
+        <Redirect to='/' />
+      </Route>
+    </Switch>
+  </Router>
+)
 
 export default App
