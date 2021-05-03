@@ -6,6 +6,7 @@ import {
   docToBook,
 } from '../utils'
 
+const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
 const NUM_OF_BOOK_PER_PAGE = 30
 
 const options = {
@@ -14,8 +15,6 @@ const options = {
   page: 1,
 }
 
-const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
-
 const fetchBooks = async (query) => {
   abortFetch(EVENT_NAME_OF_FETCHING_BOOKS)
 
@@ -23,7 +22,7 @@ const fetchBooks = async (query) => {
 
   if (normalizedQuery.length === 0) {
     return {
-      numFound: 0,
+      numPages: 0,
       books: [],
     }
   }
@@ -40,7 +39,7 @@ const fetchBooks = async (query) => {
   const books = docs.map(docToBook)
 
   return {
-    numFound,
+    numPages: Math.ceil(numFound / NUM_OF_BOOK_PER_PAGE),
     books,
   }
 }

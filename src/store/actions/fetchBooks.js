@@ -9,10 +9,10 @@ const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
 })
 
-const fetchBooksSuccess = ({ numFound, books }) => ({
+const fetchBooksSuccess = ({ numPages, books }) => ({
   type: FETCH_BOOKS_SUCCESS,
   payload: {
-    numFound,
+    numPages,
     books,
   },
 })
@@ -28,8 +28,8 @@ const fetchBooks = (query) => async (dispatch) => {
   dispatch(fetchBooksLoading())
 
   try {
-    const { numFound, books } = await fetchBooksFromServer(query)
-    dispatch(fetchBooksSuccess({ numFound, books }))
+    const { numPages, books } = await fetchBooksFromServer(query)
+    dispatch(fetchBooksSuccess({ numPages, books }))
   } catch (err) {
     dispatch(fetchBooksError(err.message))
   }
