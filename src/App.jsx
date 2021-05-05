@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path='/'>
         <Home />
       </Route>
-      <Route path='/search'>
+      <Route exact path='/search'>
         <FoundBooks />
       </Route>
       <Route path='*'>
