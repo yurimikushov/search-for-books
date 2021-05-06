@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSuggestPopupProps } from '../../../store/hooks'
+import { useSuggestPopupProps } from '../store/hooks'
 
 const useAutoUpdateSuggestsPopupProps = (formRef, inputBoxRef) => {
   const { setProps } = useSuggestPopupProps()

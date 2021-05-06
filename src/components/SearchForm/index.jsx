@@ -1,29 +1,37 @@
-import React, { useRef } from 'react'
-import { useSearchBooks } from '../../hooks'
-import { useAutoUpdateSuggestsPopupProps } from './hooks'
+import React from 'react'
+import PropTypes from 'prop-types'
 import SearchInput from './SearchInput'
 import SearchButton from './SearchButton'
 import './index.css'
 
-const SearchForm = () => {
-  const formRef = useRef()
-  const inputBoxRef = useRef()
+const SearchForm = ({
+  formRef,
+  inputBoxRef,
+  value,
+  onChange,
+  onClear,
+  onSearch,
+  style = {},
+}) => (
+  <form ref={formRef} className='search-form' style={style}>
+    <SearchInput
+      ref={inputBoxRef}
+      value={value}
+      onChange={onChange}
+      onClear={onClear}
+    />
+    <SearchButton onSearch={onSearch} />
+  </form>
+)
 
-  useAutoUpdateSuggestsPopupProps(formRef, inputBoxRef)
-
-  const searchBooks = useSearchBooks()
-
-  const onSearchHeandler = (e) => {
-    e.preventDefault()
-    searchBooks()
-  }
-
-  return (
-    <form ref={formRef} className='search-form'>
-      <SearchInput ref={inputBoxRef} />
-      <SearchButton onSearch={onSearchHeandler} />
-    </form>
-  )
+SearchForm.propTypes = {
+  formRef: PropTypes.object.isRequired,
+  inputBoxRef: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
+  style: PropTypes.object,
 }
 
 export default SearchForm

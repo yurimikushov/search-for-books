@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAutoFetchSuggests } from '../hooks'
-import SearchForm from '../components/SearchForm'
+import SearchForm from '../containers/SearchForm'
 import SuggestsPresenter from '../components/SuggestsPresenter'
 
 const HomePage = () => {
@@ -8,12 +8,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div
-        className='search-form-wrapper'
-        style={{ transform: 'translateY(calc(100vh / 2 - 200%))' }}
-      >
-        <SearchForm />
-      </div>
+      <SearchForm style={{ transform: 'translateY(calc(100vh / 2 - 200%))' }} />
       <SuggestsPresenter />
     </>
   )

@@ -1,17 +1,16 @@
 import React, { forwardRef, useRef } from 'react'
-import { useSearchQuery } from '../../store/hooks'
+import PropTypes from 'prop-types'
 
-const SearchInput = forwardRef((_, inputBoxRef) => {
+const SearchInput = forwardRef(({ value, onChange, onClear }, inputBoxRef) => {
   const inputRef = useRef()
-  const [searchQuery, setSearchQuery] = useSearchQuery()
 
-  const onChangeSearchQuery = (e) => {
-    setSearchQuery(e.target.value)
+  const onChangeHandler = (e) => {
+    onChange(e.target.value)
   }
 
-  const onClearSearchQuery = (e) => {
+  const onClearHandler = (e) => {
     e.preventDefault()
-    setSearchQuery('')
+    onClear()
     inputRef.current.focus()
   }
 
@@ -21,20 +20,20 @@ const SearchInput = forwardRef((_, inputBoxRef) => {
         ref={inputRef}
         className='search-form__input'
         type='text'
-        value={searchQuery}
-        onChange={onChangeSearchQuery}
+        value={value}
+        onChange={onChangeHandler}
         placeholder='Введите название книги'
         autoFocus
       />
       <button
         className={
           'search-form__clear-btn ' +
-          (searchQuery.length > 0
+          (value.length > 0
             ? 'search-form__clear-btn_visible'
             : 'search-form__clear-btn_hidden')
         }
         type='reset'
-        onClick={onClearSearchQuery}
+        onClick={onClearHandler}
       >
         &nbsp;
       </button>
@@ -43,5 +42,11 @@ const SearchInput = forwardRef((_, inputBoxRef) => {
 })
 
 SearchInput.displayName = 'SearchInput'
+
+SearchInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
+}
 
 export default SearchInput
