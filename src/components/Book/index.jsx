@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './index.css'
 
 const Book = ({ img, title, author, publishDate, publisher, isbn }) => (
@@ -18,6 +19,13 @@ const Book = ({ img, title, author, publishDate, publisher, isbn }) => (
   </div>
 )
 
-Book.propTypes = {}
+Book.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  publishDate: PropTypes.string.isRequired,
+  publisher: PropTypes.string.isRequired,
+  isbn: PropTypes.string.isRequired,
+}
 
 export default Book
