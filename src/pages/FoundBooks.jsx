@@ -2,7 +2,7 @@ import React from 'react'
 import { useAutoFetchSuggests } from '../hooks'
 import SearchForm from '../containers/SearchForm'
 import FoundBooks from '../containers/FoundBooks'
-import SuggestsPresenter from '../components/SuggestsPresenter'
+import SuggestsPopup from '../containers/SuggestsPopup'
 import BookPopup from '../containers/BookPopup'
 
 const FoundBooksPage = () => {
@@ -12,7 +12,7 @@ const FoundBooksPage = () => {
     <>
       <SearchForm />
       <FoundBooks />
-      <SuggestsPresenter />
+      <SuggestsPopup />
       <BookPopup />
     </>
   )

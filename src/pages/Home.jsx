@@ -1,15 +1,19 @@
 import React from 'react'
 import { useAutoFetchSuggests } from '../hooks'
 import SearchForm from '../containers/SearchForm'
-import SuggestsPresenter from '../components/SuggestsPresenter'
+import SuggestsPopup from '../containers/SuggestsPopup'
 
 const HomePage = () => {
   useAutoFetchSuggests()
 
   return (
     <>
-      <SearchForm style={{ transform: 'translateY(calc(100vh / 2 - 200%))' }} />
-      <SuggestsPresenter />
+      <SearchForm
+        style={{
+          transform: 'translateY(calc(100vh / 2 - 200%))',
+        }}
+      />
+      <SuggestsPopup />
     </>
   )
 }
