@@ -1,14 +1,20 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useSearchQuery } from '../store/hooks'
-import { useSearchBooks, useAutoUpdateSuggestsPopupProps } from '../hooks'
+import {
+  useSearchBooks,
+  useFetchSuggests,
+  useAutoUpdateSuggestsPopupProps,
+} from '../hooks'
 import SearchForm from '../components/SearchForm'
 
 const SearchFormContainer = ({ style }) => {
   const [searchQuery, setSearchQuery] = useSearchQuery()
+  const fetchSuggests = useFetchSuggests()
 
   const onChangeHandler = (searchQuery) => {
     setSearchQuery(searchQuery)
+    fetchSuggests(searchQuery)
   }
 
   const onClearHandler = () => {
