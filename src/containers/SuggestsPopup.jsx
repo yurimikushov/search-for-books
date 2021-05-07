@@ -1,16 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { useSuggestPopupProps, useSuggests } from '../store/hooks'
+import React, { useRef, useEffect } from 'react'
+import { useSuggestsPopup, useSuggests } from '../store/hooks'
 import SuggestsPopup from '../components/SuggestsPopup'
 import Suggests from '../components/Suggests'
 
 const SuggestsPopupContainer = () => {
   const suggestsRef = useRef()
-  const [show, setShow] = useState(false)
-  const { top, left, width } = useSuggestPopupProps()
+  const { show, top, left, width, onShow, onHide } = useSuggestsPopup()
   const { isLoading, suggests } = useSuggests()
-
-  const onShow = () => setShow(true)
-  const onHide = () => setShow(false)
 
   useEffect(() => {
     const onCloseHandler = ({ target }) => {

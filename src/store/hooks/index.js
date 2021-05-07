@@ -1,5 +1,5 @@
 export { useSearchQuery } from './useSearchQuery'
-export { useSuggestPopupProps } from './useSuggestPopupProps'
+export { useSuggestsPopup } from './useSuggestsPopup'
 export { useBookPopup } from './useBookPopup'
 export { useFetchSuggests } from './useFetchSuggests'
 export { useFetchBooks } from './useFetchBooks'
