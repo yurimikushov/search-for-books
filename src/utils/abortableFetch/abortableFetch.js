@@ -13,22 +13,12 @@ const abortableFetch = (url, { name, ...fetchOptions }) => {
 
   addEventListener(createAbortEventName(name), onAbort)
 
-  const fetchPromise = fetch(url, {
+  return fetch(url, {
     ...fetchOptions,
     ...signal,
+  }).finally(() => {
+    removeEventListener(createAbortEventName(name), onAbort)
   })
-
-  fetchPromise
-    .catch((err) => {
-      if (err.name !== 'AbortError') {
-        throw err
-      }
-    })
-    .finally(() => {
-      removeEventListener(createAbortEventName(name), onAbort)
-    })
-
-  return fetchPromise
 }
 
 export { abortableFetch }

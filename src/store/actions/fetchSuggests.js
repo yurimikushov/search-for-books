@@ -4,8 +4,8 @@ import {
   FETCH_SUGGESTS_LOADING,
   FETCH_SUGGESTS_SUCCESS,
   FETCH_SUGGESTS_ERROR,
+  FETCH_SUGGESTS_ABORT,
 } from '../actionTypes'
-import { EVENT_NAME_OF_FETCHING_SUGGESTS } from '../constants'
 
 const fetchSuggestsLoading = () => ({
   type: FETCH_SUGGESTS_LOADING,
@@ -25,6 +25,12 @@ const fetchSuggestsError = (errorMessage) => ({
   },
 })
 
+const fetchSuggestsAbort = () => ({
+  type: FETCH_SUGGESTS_ABORT,
+})
+
+const EVENT_NAME_OF_FETCHING_SUGGESTS = 'fetchSuggests'
+
 const fetchSuggests = (query) => async (dispatch) => {
   abortFetch(EVENT_NAME_OF_FETCHING_SUGGESTS)
 
@@ -36,7 +42,11 @@ const fetchSuggests = (query) => async (dispatch) => {
     })
     dispatch(fetchSuggestsSuccess(suggests))
   } catch (err) {
-    dispatch(fetchSuggestsError(err))
+    if (err.name === 'AbortError') {
+      dispatch(fetchSuggestsAbort())
+    } else {
+      dispatch(fetchSuggestsError(err.message))
+    }
   }
 }
 

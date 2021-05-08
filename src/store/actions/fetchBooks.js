@@ -4,11 +4,8 @@ import {
   FETCH_BOOKS_LOADING,
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_ERROR,
+  FETCH_BOOKS_ABORT,
 } from '../actionTypes'
-import {
-  EVENT_NAME_OF_FETCHING_SUGGESTS,
-  EVENT_NAME_OF_FETCHING_BOOKS,
-} from '../constants'
 
 const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
@@ -29,8 +26,13 @@ const fetchBooksError = (errorMessage) => ({
   },
 })
 
+const fetchBooksAbort = () => ({
+  type: FETCH_BOOKS_ABORT,
+})
+
+const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
+
 const fetchBooks = (query) => async (dispatch) => {
-  abortFetch(EVENT_NAME_OF_FETCHING_SUGGESTS)
   abortFetch(EVENT_NAME_OF_FETCHING_BOOKS)
 
   dispatch(fetchBooksLoading())
@@ -42,7 +44,11 @@ const fetchBooks = (query) => async (dispatch) => {
 
     dispatch(fetchBooksSuccess({ numPages, books }))
   } catch (err) {
-    dispatch(fetchBooksError(err.message))
+    if (err.name === 'AbortError') {
+      dispatch(fetchBooksAbort())
+    } else {
+      dispatch(fetchBooksError(err.message))
+    }
   }
 }
 
