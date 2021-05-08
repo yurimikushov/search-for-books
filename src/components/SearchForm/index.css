@@ -31,7 +31,7 @@
   width: 40px;
   height: 40px;
   background-color: white;
-  background-image: url(../../../public/img/close.svg);
+  background-image: url(assets/img/close.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   transform: translateY(-50%);
