@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { isSmallScreen } from '../utils'
 import { useSuggestsPopup } from '../store/hooks'
 
 const useAutoUpdateSuggestsPopupProps = (formRef, inputBoxRef) => {
@@ -9,11 +10,14 @@ const useAutoUpdateSuggestsPopupProps = (formRef, inputBoxRef) => {
     const { current: inputBoxNode } = inputBoxRef
 
     const { left, bottom } = formNode.getBoundingClientRect()
+    const width = isSmallScreen()
+      ? formNode.clientWidth
+      : inputBoxNode.clientWidth
 
     setProps({
       top: bottom,
       left,
-      width: inputBoxNode.clientWidth,
+      width,
     })
   }
 
