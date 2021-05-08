@@ -5,8 +5,13 @@ import './index.css'
 
 const Suggests = forwardRef(({ suggests, onChoose }, suggestsRef) => (
   <ul ref={suggestsRef} className='suggests'>
-    {suggests.map(({ id, title }) => (
-      <Suggest key={id} title={title} onChoose={() => onChoose(title)} />
+    {suggests.map(({ id, title, author }) => (
+      <Suggest
+        key={id}
+        title={title}
+        author={author}
+        onChoose={() => onChoose(title)}
+      />
     ))}
   </ul>
 ))
@@ -16,6 +21,7 @@ Suggests.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
     })
   ),
   onChoose: PropTypes.func.isRequired,

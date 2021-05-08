@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import { extractFirstAuthor } from './extractFirstAuthor'
+import { extractFirstAuthor } from '../extractFirstAuthor'
 import { extractFirstISBN } from './extractFirstISBN'
 import { extractFirstPublisher } from './extractFirstPublisher'
 import { extractFirstPublishDate } from './extractFirstPublishDate'

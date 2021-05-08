@@ -7,7 +7,7 @@ import {
 
 const options = {
   limit: 5,
-  fields: ['title'],
+  fields: ['title', 'author_name'],
   page: 1,
 }
 

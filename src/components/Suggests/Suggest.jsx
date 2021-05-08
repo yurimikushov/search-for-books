@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Suggest = ({ title, onChoose }) => (
+const Suggest = ({ title, author, onChoose }) => (
   <li className='suggest' onClick={onChoose}>
-    {title}
+    {`${title} / ${author}`}
   </li>
 )
 
 Suggest.propTypes = {
   title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   onChoose: PropTypes.func.isRequired,
 }
 
