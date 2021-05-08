@@ -1,11 +1,17 @@
 import React, { forwardRef, useRef } from 'react'
 import PropTypes from 'prop-types'
 
-const SearchInput = forwardRef(({ value, onChange, onClear }, inputBoxRef) => {
+const SearchInput = forwardRef((props, inputBoxRef) => {
+  const { value, onChange, onActivate, onClear } = props
+
   const inputRef = useRef()
 
   const onChangeHandler = (e) => {
     onChange(e.target.value)
+  }
+
+  const onActivateHandler = () => {
+    onActivate()
   }
 
   const onClearHandler = (e) => {
@@ -22,6 +28,7 @@ const SearchInput = forwardRef(({ value, onChange, onClear }, inputBoxRef) => {
         type='text'
         value={value}
         onChange={onChangeHandler}
+        onClick={onActivateHandler}
         placeholder='Введите название книги'
         autoFocus
       />
@@ -46,6 +53,7 @@ SearchInput.displayName = 'SearchInput'
 SearchInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onActivate: PropTypes.func.isRequired,
   onClear: PropTypes.func.isRequired,
 }
 

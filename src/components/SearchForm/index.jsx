@@ -9,6 +9,7 @@ const SearchForm = ({
   inputBoxRef,
   value,
   onChange,
+  onActivate,
   onClear,
   onSearch,
   style = {},
@@ -18,6 +19,7 @@ const SearchForm = ({
       ref={inputBoxRef}
       value={value}
       onChange={onChange}
+      onActivate={onActivate}
       onClear={onClear}
     />
     <SearchButton onSearch={onSearch} />
@@ -29,6 +31,7 @@ SearchForm.propTypes = {
   inputBoxRef: PropTypes.object.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onActivate: PropTypes.func.isRequired,
   onClear: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   style: PropTypes.object,

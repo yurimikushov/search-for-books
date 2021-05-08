@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useSearchQuery } from '../store/hooks'
 import {
   useUpdateSearchQuery,
+  useActivateSearchQueryField,
   useSearchBooks,
   useAutoUpdateSuggestsPopupProps,
 } from '../hooks'
@@ -12,6 +13,7 @@ const SearchFormContainer = ({ style }) => {
   const [searchQuery] = useSearchQuery()
 
   const onChangeHandler = useUpdateSearchQuery()
+  const onActivateHandler = useActivateSearchQueryField()
   const onClearHandler = useUpdateSearchQuery()
 
   const searchBooks = useSearchBooks()
@@ -31,6 +33,7 @@ const SearchFormContainer = ({ style }) => {
       inputBoxRef={inputBoxRef}
       value={searchQuery}
       onChange={onChangeHandler}
+      onActivate={onActivateHandler}
       onClear={onClearHandler}
       onSearch={onSearchHeandler}
       style={style}
