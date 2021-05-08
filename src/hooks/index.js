@@ -2,5 +2,6 @@ export { useAutoUpdateSuggestsPopupProps } from './useAutoUpdateSuggestsPopupPro
 export { useUpdateSearchQuery } from './useUpdateSearchQuery'
 export { useFetchSuggests } from './useFetchSuggests'
 export { useSearchBooks } from './useSearchBooks'
+export { useChooseSuggest } from './useChooseSuggest'
 export { useRedirect } from './useRedirect'
 export { useQueryParams } from './useQueryParams'

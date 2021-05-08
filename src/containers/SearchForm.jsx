@@ -13,7 +13,12 @@ const SearchFormContainer = ({ style }) => {
 
   const onChangeHandler = useUpdateSearchQuery()
   const onClearHandler = useUpdateSearchQuery()
-  const onSearchHeandler = useSearchBooks()
+
+  const searchBooks = useSearchBooks()
+
+  const onSearchHeandler = () => {
+    searchBooks(searchQuery)
+  }
 
   const formRef = useRef()
   const inputBoxRef = useRef()
