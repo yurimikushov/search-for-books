@@ -1,4 +1,5 @@
 export { useAutoUpdateSuggestsPopupProps } from './useAutoUpdateSuggestsPopupProps'
+export { useUpdateSearchQuery } from './useUpdateSearchQuery'
 export { useFetchSuggests } from './useFetchSuggests'
 export { useSearchBooks } from './useSearchBooks'
 export { useRedirect } from './useRedirect'

@@ -6,11 +6,16 @@ import Suggests from '../components/Suggests'
 const SuggestsPopupContainer = () => {
   const suggestsRef = useRef()
   const { show, top, left, width, onShow, onHide } = useSuggestsPopup()
-  const { isLoading, suggests } = useSuggests()
+  const { suggests } = useSuggests()
 
   useEffect(() => {
     const onCloseHandler = ({ target }) => {
       if (!show) {
+        return
+      }
+
+      if (!suggestsRef.current) {
+        onHide()
         return
       }
 
@@ -24,12 +29,6 @@ const SuggestsPopupContainer = () => {
     window.addEventListener('click', onCloseHandler)
     return () => window.removeEventListener('click', onCloseHandler)
   }, [show])
-
-  useEffect(() => {
-    if (!isLoading) {
-      onShow()
-    }
-  }, [isLoading])
 
   if (!show) {
     return null
