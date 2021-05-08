@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 const Suggest = ({ title, author, onChoose }) => (
   <li className='suggest' onClick={onChoose}>
-    {`${title} / ${author}`}
+    <span className='suggest__title'>{title}</span>
+    <span className='suggest__author'>{author}</span>
   </li>
 )
 
