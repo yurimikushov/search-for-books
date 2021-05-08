@@ -7,8 +7,10 @@
   --color-bg: #fff;
   --color-search-form: #275efe;
   --color-selected-suggest: #c4d3ff;
-  --color-found-book-card: #fff;
-  --color-found-book-cover: #f0f0f0;
+  --color-suggest-author: #b1b1b1;
+  --color-book-card: #fff;
+  --color-book-cover: #f0f0f0;
+  --color-book-popup-overlay: #000000b8;
   --font-size: 16px;
 }
 

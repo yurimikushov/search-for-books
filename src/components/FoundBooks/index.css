@@ -9,7 +9,7 @@
   flex: 0 0 30%;
   padding: 15px;
   margin: calc(10% / 6);
-  background-color: var(--color-found-book-card);
+  background-color: var(--color-book-card);
   border-radius: 15px;
   box-shadow: 0 2px 8px rgb(18 17 36 / 4%), 0 4px 32px rgb(18 17 36 / 8%);
   transition: box-shadow 0.3s;
@@ -22,7 +22,7 @@
 .found-book__cover {
   width: 100%;
   height: 300px;
-  background-color: var(--color-found-book-cover);
+  background-color: var(--color-book-cover);
   background-position: center;
   background-size: cover;
 }
