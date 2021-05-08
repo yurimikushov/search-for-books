@@ -1,5 +1,4 @@
 import {
-  abortFetch,
   normalizeQuery,
   createSearchURL,
   abortableFetch,
@@ -12,11 +11,7 @@ const options = {
   page: 1,
 }
 
-const EVENT_NAME_OF_FETCHING_SUGGESTS = 'fetchSuggests'
-
-const fetchSuggests = async (query) => {
-  abortFetch(EVENT_NAME_OF_FETCHING_SUGGESTS)
-
+const fetchSuggests = async (query, { name }) => {
   const normalizedQuery = normalizeQuery(query)
 
   if (normalizedQuery.length === 0) {
@@ -28,7 +23,7 @@ const fetchSuggests = async (query) => {
   const url = createSearchURL(normalizedQuery, limit, fields.join(','), page)
 
   const res = await abortableFetch(url, {
-    name: EVENT_NAME_OF_FETCHING_SUGGESTS,
+    name,
   })
 
   const { docs } = await res.json()

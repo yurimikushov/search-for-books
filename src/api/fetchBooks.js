@@ -1,12 +1,10 @@
 import {
-  abortFetch,
   normalizeQuery,
   createSearchURL,
   abortableFetch,
   docToBook,
 } from '../utils'
 
-const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
 const NUM_OF_BOOK_PER_PAGE = 30
 
 const options = {
@@ -15,9 +13,7 @@ const options = {
   page: 1,
 }
 
-const fetchBooks = async (query) => {
-  abortFetch(EVENT_NAME_OF_FETCHING_BOOKS)
-
+const fetchBooks = async (query, { name }) => {
   const normalizedQuery = normalizeQuery(query)
 
   if (normalizedQuery.length === 0) {
@@ -32,7 +28,7 @@ const fetchBooks = async (query) => {
   const url = createSearchURL(normalizedQuery, limit, fields.join(','), page)
 
   const res = await abortableFetch(url, {
-    name: EVENT_NAME_OF_FETCHING_BOOKS,
+    name,
   })
 
   const { numFound, docs } = await res.json()
