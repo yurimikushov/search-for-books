@@ -22,7 +22,7 @@ const SearchForm = ({
       onActivate={onActivate}
       onClear={onClear}
     />
-    <SearchButton onSearch={onSearch} />
+    <SearchButton onSearch={() => onSearch(value)} />
   </form>
 )
 
