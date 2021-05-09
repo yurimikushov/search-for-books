@@ -1,10 +1,16 @@
+import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchSuggests } from '../actions'
+import { debounce } from '../../utils'
+import { fetchSuggests as fetchSuggestsAction } from '../actions'
 
 const useFetchSuggests = () => {
   const dispatch = useDispatch()
 
-  return (query) => dispatch(fetchSuggests(query))
+  const fetchSuggests = (searchQuery) => {
+    dispatch(fetchSuggestsAction(searchQuery))
+  }
+
+  return useCallback(debounce(fetchSuggests, 150), [])
 }
 
 export { useFetchSuggests }

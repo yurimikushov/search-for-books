@@ -1,7 +1,6 @@
 export { useUpdateSearchQuery } from './useUpdateSearchQuery'
 export { useSearchBooks } from './useSearchBooks'
 export { useAutoUpdateSuggestsPopupProps } from './useAutoUpdateSuggestsPopupProps'
-export { useFetchSuggests } from './useFetchSuggests'
 export { useChooseSuggest } from './useChooseSuggest'
 export { useActivateSearchQueryField } from './useActivateSearchQueryField'
 export { useRedirect } from './useRedirect'
