@@ -1,0 +1,37 @@
+.page-switcher {
+  --page-switcher-height: 35px;
+
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.page-switcher__item {
+  display: flex;
+  height: var(--page-switcher-height);
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.page-switcher__begin,
+.page-switcher__next {
+  padding: 0 15px;
+  border-radius: 15px;
+}
+
+.page-switcher__page {
+  width: var(--page-switcher-height);
+  border-radius: 50%;
+}
+
+.page-switcher__item_activated,
+.page-switcher__item:active {
+  background-color: var(--color-search-form);
+}
+
+.page-switcher__item:hover:not(.page-switcher__item_activated) {
+  background-color: var(--color-selected-suggest);
+}
