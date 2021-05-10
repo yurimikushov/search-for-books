@@ -1,12 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { pageSwitcherItemFactory } from './pageSwitcherItemFactory'
+import PageSwitcherBegin from './PageSwitcherBegin'
+import PageSwitcherPage from './PageSwitcherPage'
+import PageSwitcherNext from './PageSwitcherNext'
 import './index.css'
+
+const pageSwitcherItems = {
+  begin: PageSwitcherBegin,
+  page: PageSwitcherPage,
+  next: PageSwitcherNext,
+}
 
 const PageSwitcher = ({ pages }) => (
   <ul className='page-switcher'>
     {pages.map(({ type, title, isCurrentPage, onSwitch }) => {
-      return pageSwitcherItemFactory(type, title, isCurrentPage, onSwitch)
+      const PageSwitcherItem = pageSwitcherItems[type]
+      return (
+        <PageSwitcherItem
+          key={title}
+          title={title}
+          isCurrentPage={isCurrentPage}
+          onClick={onSwitch}
+        />
+      )
     })}
   </ul>
 )
