@@ -11,11 +11,12 @@ const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
 })
 
-const fetchBooksSuccess = ({ numPages, books }) => ({
+const fetchBooksSuccess = ({ numPages, books, currentPage }) => ({
   type: FETCH_BOOKS_SUCCESS,
   payload: {
     numPages,
     books,
+    currentPage,
   },
 })
 
@@ -32,17 +33,18 @@ const fetchBooksAbort = () => ({
 
 const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
 
-const fetchBooks = (query) => async (dispatch) => {
+const fetchBooks = (searchQuery, page) => async (dispatch) => {
   abortFetch(EVENT_NAME_OF_FETCHING_BOOKS)
 
   dispatch(fetchBooksLoading())
 
   try {
-    const { numPages, books } = await fetchBooksFromServer(query, {
+    const { numPages, books } = await fetchBooksFromServer(searchQuery, {
       name: EVENT_NAME_OF_FETCHING_BOOKS,
+      page,
     })
 
-    dispatch(fetchBooksSuccess({ numPages, books }))
+    dispatch(fetchBooksSuccess({ numPages, books, currentPage: page }))
   } catch (err) {
     if (err.name === 'AbortError') {
       dispatch(fetchBooksAbort())

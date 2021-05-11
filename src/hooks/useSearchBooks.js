@@ -6,10 +6,10 @@ const useSearchBooks = () => {
   const fetchBooks = useFetchBooks()
   const redirect = useRedirect()
 
-  return (searchQuery) => {
+  return (searchQuery, page = 1) => {
     hideSuggestsPopup()
-    fetchBooks(searchQuery)
-    redirect(`/search?q=${searchQuery}&p=1`)
+    fetchBooks(searchQuery, page)
+    redirect(`/search?q=${searchQuery}&p=${page}`)
   }
 }
 

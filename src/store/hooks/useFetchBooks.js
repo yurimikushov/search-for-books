@@ -4,7 +4,7 @@ import { fetchBooks } from '../actions'
 const useFetchBooks = () => {
   const dispatch = useDispatch()
 
-  return (query) => dispatch(fetchBooks(query))
+  return (searchQuery, page) => dispatch(fetchBooks(searchQuery, page))
 }
 
 export { useFetchBooks }

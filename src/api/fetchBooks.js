@@ -10,10 +10,9 @@ const NUM_OF_BOOK_PER_PAGE = 30
 const options = {
   limit: NUM_OF_BOOK_PER_PAGE,
   fields: ['title', 'author_name', 'isbn', 'publisher', 'publish_date'],
-  page: 1,
 }
 
-const fetchBooks = async (query, { name }) => {
+const fetchBooks = async (query, { name, page = 1 }) => {
   const normalizedQuery = normalizeQuery(query)
 
   if (normalizedQuery.length === 0) {
@@ -23,7 +22,7 @@ const fetchBooks = async (query, { name }) => {
     }
   }
 
-  const { limit, fields, page } = options
+  const { limit, fields } = options
 
   const url = createSearchURL(normalizedQuery, limit, fields.join(','), page)
 
