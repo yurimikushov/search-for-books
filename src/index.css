@@ -8,6 +8,9 @@
   --color-search-form: #275efe;
   --color-selected-suggest: #c4d3ff;
   --color-suggest-author: #b1b1b1;
+  --color-page-switcher: transparent;
+  --color-page-switcher-actived: #becfff;
+  --color-page-switcher-hovered: #e9eeff;
   --color-book-card: #fff;
   --color-book-cover: #f0f0f0;
   --color-book-popup-overlay: #000000b8;

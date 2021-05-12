@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 3px;
+  background-color: var(--color-page-switcher);
   font-size: 1.1rem;
   transition: background-color 0.2s;
 }
@@ -27,11 +28,12 @@
   border-radius: 50%;
 }
 
-.page-switcher__item_activated,
-.page-switcher__item:active {
-  background-color: var(--color-search-form);
+.page-switcher__item:hover {
+  background-color: var(--color-page-switcher-hovered);
 }
 
-.page-switcher__item:hover:not(.page-switcher__item_activated) {
-  background-color: var(--color-selected-suggest);
+.page-switcher__item_activated,
+.page-switcher__item:active,
+.page-switcher__item:hover.page-switcher__item_activated {
+  background-color: var(--color-page-switcher-actived);
 }
