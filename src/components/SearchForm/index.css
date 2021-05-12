@@ -15,7 +15,7 @@
   box-sizing: border-box;
   padding: 8px 40px 8px 12px;
   border: 2px solid var(--color-search-form);
-  background-color: var(--color-bg);
+  background-color: var(--color-app-bg);
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   font-size: 1rem;
   font-weight: 500;
@@ -55,7 +55,7 @@
   padding: 10px 30px;
   background: var(--color-search-form);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  color: var(--color-bg);
+  color: var(--color-app-bg);
   font-size: 1rem;
   line-height: 25px;
   transition: box-shadow 0.2s;
