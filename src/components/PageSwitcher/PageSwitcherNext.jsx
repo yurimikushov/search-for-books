@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PageSwitcherNext = ({ title, onClick }) => {
+const PageSwitcherNext = ({ title, onSwitch }) => {
   return (
-    <li className='page-switcher__next page-switcher__item' onClick={onClick}>
+    <li className='page-switcher__next page-switcher__item' onClick={onSwitch}>
       {title}
     </li>
   )
@@ -11,7 +11,7 @@ const PageSwitcherNext = ({ title, onClick }) => {
 
 PageSwitcherNext.propTypes = {
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSwitch: PropTypes.func.isRequired,
 }
 
 PageSwitcherNext.displayName = 'PageSwitcherItem(Next)'
