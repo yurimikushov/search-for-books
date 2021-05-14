@@ -13,6 +13,7 @@
   justify-content: center;
   margin: 0 3px;
   background-color: var(--color-page-switcher);
+  cursor: pointer;
   font-size: 1.1rem;
   transition: background-color 0.2s;
 }
@@ -30,6 +31,10 @@
 
 .page-switcher__item:hover {
   background-color: var(--color-page-switcher-hovered);
+}
+
+.page-switcher__item_activated {
+  cursor: default;
 }
 
 .page-switcher__item_activated,

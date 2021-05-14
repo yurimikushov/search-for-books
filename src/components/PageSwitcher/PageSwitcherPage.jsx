@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const dummy = () => {}
+
 const PageSwitcherPage = ({ isCurrentPage, title, onSwitch }) => (
   <li
     className={
       'page-switcher__page page-switcher__item' +
       (isCurrentPage ? ' page-switcher__item_activated' : '')
     }
-    onClick={onSwitch}
+    onClick={!isCurrentPage ? onSwitch : dummy}
   >
     {title}
   </li>
