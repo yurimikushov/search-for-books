@@ -44,7 +44,10 @@ const createPageList = (currentPageNum, numPages) => {
         : Math.floor(NUM_DISPLAYED_ITEMS / 2)
 
     const firstPageNum = currentPageNum - leftSidePageNum
-    const lastPageNum = firstPageNum + NUM_DISPLAYED_ITEMS - 1
+    const lastPageNum = Math.min(
+      firstPageNum + NUM_DISPLAYED_ITEMS - 1,
+      numPages
+    )
 
     for (let pageNum = firstPageNum; pageNum <= lastPageNum; pageNum++) {
       pageNumList.push(createPage(pageNum, pageNum === currentPageNum))
