@@ -1,4 +1,4 @@
-import { useSuggestsPopup } from '../store/hooks'
+import { useSuggestsPopup } from 'store/hooks'
 
 const useActivateSearchQueryField = () => {
   const { onShow: showSuggestsPopup } = useSuggestsPopup()

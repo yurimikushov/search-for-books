@@ -1,7 +1,7 @@
 import React from 'react'
-import { useFoundBooks, useBookPopup } from '../store/hooks'
-import Alert from '../components/Alert'
-import FoundBooks from '../components/FoundBooks'
+import { useFoundBooks, useBookPopup } from 'store/hooks'
+import Alert from 'components/Alert'
+import FoundBooks from 'components/FoundBooks'
 
 const FoundBooksContainer = () => {
   const { isLoading, books } = useFoundBooks()

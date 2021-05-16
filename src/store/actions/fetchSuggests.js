@@ -1,11 +1,11 @@
-import { fetchSuggests as fetchSuggestsFromServer } from '../../api'
-import { abortFetch } from '../../utils'
+import { fetchSuggests as fetchSuggestsFromServer } from 'api'
+import { abortFetch } from 'utils'
 import {
   FETCH_SUGGESTS_LOADING,
   FETCH_SUGGESTS_SUCCESS,
   FETCH_SUGGESTS_ERROR,
   FETCH_SUGGESTS_ABORT,
-} from '../actionTypes'
+} from 'store/actionTypes'
 
 const fetchSuggestsLoading = () => ({
   type: FETCH_SUGGESTS_LOADING,

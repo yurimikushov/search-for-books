@@ -3,7 +3,7 @@ import {
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_ERROR,
   FETCH_BOOKS_ABORT,
-} from '../actionTypes'
+} from 'store/actionTypes'
 
 const initailState = {
   isLoading: false,

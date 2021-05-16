@@ -2,7 +2,7 @@ import {
   SET_SUGGESTS_POPUP_PROPS,
   SHOW_SUGGESTS_POPUP,
   HIDE_SUGGESTS_POPUP,
-} from '../actionTypes'
+} from 'store/actionTypes'
 
 const initialState = {
   show: false,

@@ -3,7 +3,7 @@ import {
   createSearchURL,
   abortableFetch,
   docToSuggest,
-} from '../utils'
+} from 'utils'
 
 const options = {
   limit: 5,

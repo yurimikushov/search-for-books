@@ -1,4 +1,4 @@
-import { SET_SEARCH_QUERY } from '../actionTypes'
+import { SET_SEARCH_QUERY } from 'store/actionTypes'
 
 const searchQueryReducer = (state = '', { type, payload }) => {
   switch (type) {

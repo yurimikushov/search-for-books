@@ -1,4 +1,4 @@
-import { SHOW_BOOK_POPUP, HIDE_BOOK_POPUP } from '../actionTypes'
+import { SHOW_BOOK_POPUP, HIDE_BOOK_POPUP } from 'store/actionTypes'
 
 const initialState = {
   show: false,

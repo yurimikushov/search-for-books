@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { isSmallScreen } from '../utils'
-import { useSuggestsPopup } from '../store/hooks'
+import { isSmallScreen } from 'utils'
+import { useSuggestsPopup } from 'store/hooks'
 
 const useAutoUpdateSuggestsPopupProps = (formRef, inputBoxRef) => {
   const { setProps } = useSuggestsPopup()

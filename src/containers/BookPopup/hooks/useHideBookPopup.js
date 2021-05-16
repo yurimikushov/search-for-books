@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useBookPopup } from '../../../store/hooks'
+import { useBookPopup } from 'store/hooks'
 
 const useHideBookPopup = (bookPopupRef) => {
   const { show, onHide } = useBookPopup()

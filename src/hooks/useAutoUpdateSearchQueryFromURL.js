@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { useQueryParams } from '../hooks'
-import { useSearchQuery, useFetchBooks, useFetchSuggests } from '../store/hooks'
+import { useSearchQuery, useFetchBooks, useFetchSuggests } from 'store/hooks'
+import { useQueryParams } from 'hooks'
 
 const useAutoUpdateSearchQueryFromURL = () => {
   const { q: urlSearchQuery } = useQueryParams()

@@ -3,7 +3,7 @@ import {
   createSearchURL,
   abortableFetch,
   docToBook,
-} from '../utils'
+} from 'utils'
 
 const NUM_OF_BOOK_PER_PAGE = 30
 

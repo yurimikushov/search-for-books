@@ -3,7 +3,7 @@ import {
   setSuggestsPopupProps,
   showSuggestsPopup,
   hideSuggestsPopup,
-} from '../actions'
+} from 'store/actions'
 
 const useSuggestsPopup = () => {
   const { show, top, left, width } = useSelector(

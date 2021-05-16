@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
-import { useBookPopup, useFoundBook } from '../../store/hooks'
+import { useBookPopup, useFoundBook } from 'store/hooks'
 import { useHideBookPopup } from './hooks'
-import BookPopup from '../../components/BookPopup'
-import Book from '../../components/Book'
+import BookPopup from 'components/BookPopup'
+import Book from 'components/Book'
 
 const BookPopupContainer = () => {
   const bookPopupRef = useRef()

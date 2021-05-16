@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-import { useSearchQuery } from '../store/hooks'
+import { useSearchQuery } from 'store/hooks'
 import {
   useUpdateSearchQuery,
   useActivateSearchQueryField,
   useSearchBooks,
   useAutoUpdateSuggestsPopupProps,
-} from '../hooks'
-import SearchForm from '../components/SearchForm'
+} from 'hooks'
+import SearchForm from 'components/SearchForm'
 
 const SearchFormContainer = ({ style }) => {
   const [searchQuery] = useSearchQuery()

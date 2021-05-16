@@ -1,8 +1,8 @@
 import React from 'react'
-import { useSearchBooks } from '../hooks'
-import { useSearchQuery, useFoundBooks } from '../store/hooks'
-import { createPageList } from '../utils'
-import PageSwitcher from '../components/PageSwitcher'
+import { createPageList } from 'utils'
+import { useSearchQuery, useFoundBooks } from 'store/hooks'
+import { useSearchBooks } from 'hooks'
+import PageSwitcher from 'components/PageSwitcher'
 
 const PageSwitcherContainer = () => {
   const onSearch = useSearchBooks()

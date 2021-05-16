@@ -1,6 +1,5 @@
-import { useSearchQuery } from '../store/hooks'
-import { useSearchBooks } from '../hooks'
-import { useFetchSuggests } from '../store/hooks'
+import { useSearchQuery, useFetchSuggests } from 'store/hooks'
+import { useSearchBooks } from 'hooks'
 
 const useChooseSuggest = () => {
   const [_, setSearchQuery] = useSearchQuery()

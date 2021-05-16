@@ -1,5 +1,5 @@
-import { useSuggestsPopup, useFetchBooks } from '../store/hooks'
-import { useRedirect } from '../hooks'
+import { useSuggestsPopup, useFetchBooks } from 'store/hooks'
+import { useRedirect } from 'hooks'
 
 const useSearchBooks = () => {
   const { onHide: hideSuggestsPopup } = useSuggestsPopup()

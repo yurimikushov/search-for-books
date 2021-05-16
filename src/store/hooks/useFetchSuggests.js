@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { debounce } from '../../utils'
-import { fetchSuggests as fetchSuggestsAction } from '../actions'
+import { debounce } from 'utils'
+import { fetchSuggests as fetchSuggestsAction } from 'store/actions'
 
 const useFetchSuggests = () => {
   const dispatch = useDispatch()

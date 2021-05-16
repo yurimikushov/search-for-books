@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { showBookPopup, hideBookPopup } from '../actions'
+import { showBookPopup, hideBookPopup } from 'store/actions'
 
 const useBookPopup = () => {
   const { show, bookId } = useSelector(({ bookPopup }) => bookPopup)

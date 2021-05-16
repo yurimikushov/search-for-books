@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { setSearchQuery } from '../actions'
+import { setSearchQuery } from 'store/actions'
 
 const useSearchQuery = () => {
   const dispatch = useDispatch()

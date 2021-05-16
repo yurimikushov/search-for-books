@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { fetchBooks } from '../actions'
+import { fetchBooks } from 'store/actions'
 
 const useFetchBooks = () => {
   const dispatch = useDispatch()

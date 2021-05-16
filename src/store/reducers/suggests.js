@@ -3,7 +3,7 @@ import {
   FETCH_SUGGESTS_SUCCESS,
   FETCH_SUGGESTS_ERROR,
   FETCH_SUGGESTS_ABORT,
-} from '../actionTypes'
+} from 'store/actionTypes'
 
 const initailState = {
   isLoading: false,

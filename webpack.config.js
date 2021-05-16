@@ -20,6 +20,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',

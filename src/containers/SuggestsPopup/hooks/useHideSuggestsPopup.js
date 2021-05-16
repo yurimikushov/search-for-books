@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSuggestsPopup } from '../../../store/hooks'
+import { useSuggestsPopup } from 'store/hooks'
 
 const useHideSuggestsPopup = (suggestsPopupRef) => {
   const { show, onHide } = useSuggestsPopup()

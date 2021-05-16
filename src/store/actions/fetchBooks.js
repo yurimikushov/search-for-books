@@ -1,11 +1,11 @@
-import { fetchBooks as fetchBooksFromServer } from '../../api'
-import { abortFetch } from '../../utils'
+import { fetchBooks as fetchBooksFromServer } from 'api'
+import { abortFetch } from 'utils'
 import {
   FETCH_BOOKS_LOADING,
   FETCH_BOOKS_SUCCESS,
   FETCH_BOOKS_ERROR,
   FETCH_BOOKS_ABORT,
-} from '../actionTypes'
+} from 'store/actionTypes'
 
 const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
