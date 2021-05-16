@@ -25,6 +25,20 @@ const BookPopupContainer = () => {
     return () => window.removeEventListener('click', onCloseHanler)
   }, [show])
 
+  useEffect(() => {
+    const onCloseHandler = ({ key }) => {
+      if (show && key === 'Escape') {
+        onHide()
+      }
+    }
+
+    addEventListener('keydown', onCloseHandler)
+
+    return () => {
+      removeEventListener('keydown', onCloseHandler)
+    }
+  }, [show])
+
   if (!show) {
     return null
   }
