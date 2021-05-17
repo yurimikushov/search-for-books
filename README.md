@@ -4,13 +4,17 @@ I was inspired to implement this app by a test assignment, that I found on the I
 
 I haven't implementated a some requirements, but I have implemented an another features, that I made up by myself.
 
-## Формулировка задания	
+## Statement	
 
-Разработайте приложение для поиска книг с адаптивной версткой.
+Implement an app for searching books with adaptive layout.
 
-### Требования
+### Requirements
 
-Приложение должно содержать поисковую строку для ввода названия книги и кнопку поиска рядом. Под поисковой строкой должен выводиться список сниппетов найденных книг, состоящих из изображения обложки, названия книги, автора. При клике на сниппете книги в модальном окне должно выводиться увеличенное изображение обложки, название книги, автор, дата публикации, издатель, ISBN книги.
+The app must have a search bar for typing a book title and a search button next to a search bar.
+
+A snippet list of a found books must be displayed under a search bar. A snippet of found book must be contained a book cover, a title and an author name.
+
+The app must display a more info about a found book (a scaled book cover, a title, an author name, a publishing date, a publisher name and ISBN code) in a modal window after any click on a snippet of a found book.
 
 ### Особенности
 
