@@ -1,5 +1,6 @@
 .book-popup__overlay {
   position: fixed;
+  z-index: var(--z-book-popup);
   top: 0;
   right: 0;
   bottom: 0;
