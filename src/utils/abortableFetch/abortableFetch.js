@@ -1,4 +1,4 @@
-import { createAbortEventName } from './createEventName'
+import { createAbortEventName } from './createAbortEventName'
 
 const abortableFetch = (url, { name, ...fetchOptions }) => {
   const controller = new AbortController()
