@@ -3,26 +3,26 @@ const MAX_NUM_DISPLAYED_ITEMS = 5
 const createBegin = () => ({
   type: 'begin',
   title: 'В начало',
-  pageNum: 1,
+  page: 1,
 })
 
-const createPage = (pageNum) => ({
+const createPage = (page) => ({
   type: 'page',
-  title: pageNum.toString(),
-  pageNum: pageNum,
+  title: page.toString(),
+  page,
 })
 
-const createNext = (nextPageNum) => ({
+const createNext = (nextPage) => ({
   type: 'next',
   title: 'дальше',
-  pageNum: nextPageNum,
+  page: nextPage,
 })
 
-const calcStartAndEndPages = (currentPageNum, numPages) => {
+const calcStartAndEndPages = (currentPage, numPages) => {
   const NUM_DISPLAYED_ITEMS =
     numPages < MAX_NUM_DISPLAYED_ITEMS ? numPages : MAX_NUM_DISPLAYED_ITEMS
 
-  if (currentPageNum < Math.ceil(NUM_DISPLAYED_ITEMS / 2)) {
+  if (currentPage < Math.ceil(NUM_DISPLAYED_ITEMS / 2)) {
     return [1, NUM_DISPLAYED_ITEMS]
   }
 
@@ -31,34 +31,34 @@ const calcStartAndEndPages = (currentPageNum, numPages) => {
       ? NUM_DISPLAYED_ITEMS / 2 - 1
       : Math.floor(NUM_DISPLAYED_ITEMS / 2)
 
-  const end = Math.min(currentPageNum + pageNumOnRightSide, numPages)
+  const end = Math.min(currentPage + pageNumOnRightSide, numPages)
   const start = Math.max(end - NUM_DISPLAYED_ITEMS + 1, 1)
 
   return [start, end]
 }
 
-const createPageList = (currentPageNum, numPages) => {
+const createPageList = (currentPage, numPages) => {
   if (numPages < 1) {
     return []
   }
 
-  const pageNumList = []
+  const pageList = []
 
-  if (1 < currentPageNum) {
-    pageNumList.push(createBegin())
+  if (1 < currentPage) {
+    pageList.push(createBegin())
   }
 
-  const [start, end] = calcStartAndEndPages(currentPageNum, numPages)
+  const [start, end] = calcStartAndEndPages(currentPage, numPages)
 
-  for (let pageNum = start; pageNum <= end; pageNum++) {
-    pageNumList.push(createPage(pageNum))
+  for (let page = start; page <= end; page++) {
+    pageList.push(createPage(page))
   }
 
-  if (currentPageNum < numPages) {
-    pageNumList.push(createNext(currentPageNum + 1))
+  if (currentPage < numPages) {
+    pageList.push(createNext(currentPage + 1))
   }
 
-  return pageNumList
+  return pageList
 }
 
 export { createPageList }

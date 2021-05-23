@@ -13,14 +13,14 @@ const pageSwitcherItems = {
 
 const PageSwitcher = ({ currentPage, pages, onSwitch }) => (
   <ul className='page-switcher'>
-    {pages.map(({ type, title, pageNum }) => {
+    {pages.map(({ type, title, page }) => {
       const PageSwitcherItem = pageSwitcherItems[type]
       return (
         <PageSwitcherItem
           key={title}
           title={title}
-          isCurrentPage={currentPage === pageNum}
-          onSwitch={() => onSwitch(pageNum)}
+          isCurrentPage={currentPage === page}
+          onSwitch={() => onSwitch(page)}
         />
       )
     })}

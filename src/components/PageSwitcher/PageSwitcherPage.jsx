@@ -21,6 +21,6 @@ PageSwitcherPage.propTypes = {
   onSwitch: PropTypes.func.isRequired,
 }
 
-PageSwitcherPage.displayName = 'PageSwitcherItem(PageNum)'
+PageSwitcherPage.displayName = 'PageSwitcherItem(Page)'
 
 export default PageSwitcherPage
