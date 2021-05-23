@@ -6,11 +6,10 @@ const createBegin = () => ({
   pageNum: 1,
 })
 
-const createPage = (pageNum, isCurrentPage) => ({
+const createPage = (pageNum) => ({
   type: 'page',
   title: pageNum.toString(),
   pageNum: pageNum,
-  isCurrentPage,
 })
 
 const createNext = (nextPageNum) => ({
@@ -52,7 +51,7 @@ const createPageList = (currentPageNum, numPages) => {
   const [start, end] = calcStartAndEndPages(currentPageNum, numPages)
 
   for (let pageNum = start; pageNum <= end; pageNum++) {
-    pageNumList.push(createPage(pageNum, pageNum === currentPageNum))
+    pageNumList.push(createPage(pageNum))
   }
 
   if (currentPageNum < numPages) {

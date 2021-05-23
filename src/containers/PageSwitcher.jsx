@@ -23,7 +23,13 @@ const PageSwitcherContainer = () => {
     onSearch(searchQuery, page)
   }
 
-  return <PageSwitcher pages={pages} onSwitch={onSwitchHandler} />
+  return (
+    <PageSwitcher
+      currentPage={currentPage}
+      pages={pages}
+      onSwitch={onSwitchHandler}
+    />
+  )
 }
 
 export default PageSwitcherContainer
