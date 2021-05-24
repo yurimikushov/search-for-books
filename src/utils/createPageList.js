@@ -22,7 +22,7 @@ const calcStartAndEndPages = (currentPage, numPages) => {
   const NUM_DISPLAYED_ITEMS =
     numPages < MAX_NUM_DISPLAYED_ITEMS ? numPages : MAX_NUM_DISPLAYED_ITEMS
 
-  if (currentPage < Math.ceil(NUM_DISPLAYED_ITEMS / 2)) {
+  if (currentPage <= Math.ceil(NUM_DISPLAYED_ITEMS / 2)) {
     return [1, NUM_DISPLAYED_ITEMS]
   }
 
