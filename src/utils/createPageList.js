@@ -1,4 +1,4 @@
-const MAX_NUM_DISPLAYED_ITEMS = 5
+const NEED_TO_SHOW_PAGES_NUM = 5
 
 const createBegin = () => ({
   type: 'begin',
@@ -19,20 +19,20 @@ const createNext = (nextPage) => ({
 })
 
 const calcStartAndEndPages = (currentPage, numPages) => {
-  const NUM_DISPLAYED_ITEMS =
-    numPages < MAX_NUM_DISPLAYED_ITEMS ? numPages : MAX_NUM_DISPLAYED_ITEMS
+  const SHOW_PAGES_NUM =
+    numPages < NEED_TO_SHOW_PAGES_NUM ? numPages : NEED_TO_SHOW_PAGES_NUM
 
-  if (currentPage <= Math.ceil(NUM_DISPLAYED_ITEMS / 2)) {
-    return [1, NUM_DISPLAYED_ITEMS]
+  if (currentPage <= Math.ceil(SHOW_PAGES_NUM / 2)) {
+    return [1, SHOW_PAGES_NUM]
   }
 
-  const pageNumOnRightSide =
-    NUM_DISPLAYED_ITEMS / 2 === Math.round(NUM_DISPLAYED_ITEMS / 2)
-      ? NUM_DISPLAYED_ITEMS / 2 - 1
-      : Math.floor(NUM_DISPLAYED_ITEMS / 2)
+  const pagesOnRightSide =
+    SHOW_PAGES_NUM / 2 === Math.round(SHOW_PAGES_NUM / 2)
+      ? SHOW_PAGES_NUM / 2 - 1
+      : Math.floor(SHOW_PAGES_NUM / 2)
 
-  const end = Math.min(currentPage + pageNumOnRightSide, numPages)
-  const start = Math.max(end - NUM_DISPLAYED_ITEMS + 1, 1)
+  const end = Math.min(currentPage + pagesOnRightSide, numPages)
+  const start = Math.max(end - SHOW_PAGES_NUM + 1, 1)
 
   return [start, end]
 }
