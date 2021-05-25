@@ -8,7 +8,6 @@ import {
 const initailState = {
   isLoading: false,
   numPages: 0,
-  currentPage: 0,
   books: [],
   error: '',
 }
@@ -25,7 +24,6 @@ const foundBooksReducer = (state = initailState, { type, payload }) => {
         ...state,
         isLoading: false,
         numPages: payload.numPages,
-        currentPage: payload.currentPage,
         books: payload.books,
       }
     case FETCH_BOOKS_ERROR:

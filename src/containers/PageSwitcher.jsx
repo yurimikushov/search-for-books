@@ -1,13 +1,14 @@
 import React from 'react'
 import { createPageList } from 'utils'
-import { useSearchQuery, useFoundBooks } from 'store/hooks'
+import { useSearchQuery, useSearchPage, useFoundBooks } from 'store/hooks'
 import { useSearchBooks } from 'hooks'
 import PageSwitcher from 'components/PageSwitcher'
 
 const PageSwitcherContainer = () => {
   const onSearch = useSearchBooks()
   const [searchQuery] = useSearchQuery()
-  const { isLoading, currentPage, numPages } = useFoundBooks()
+  const [currentPage] = useSearchPage()
+  const { isLoading, numPages } = useFoundBooks()
 
   if (isLoading) {
     return null

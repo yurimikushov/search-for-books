@@ -1,4 +1,5 @@
 export { setSearchQuery } from './setSearchQuery'
+export { setSearchPage } from './setSearchPage'
 export { setSuggestsPopupProps } from './setSuggestsPopupProps'
 export { showSuggestsPopup } from './showSuggestsPopup'
 export { hideSuggestsPopup } from './hideSuggestsPopup'

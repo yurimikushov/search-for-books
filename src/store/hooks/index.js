@@ -1,4 +1,5 @@
 export { useSearchQuery } from './useSearchQuery'
+export { useSearchPage } from './useSearchPage'
 export { useSuggestsPopup } from './useSuggestsPopup'
 export { useBookPopup } from './useBookPopup'
 export { useFetchSuggests } from './useFetchSuggests'

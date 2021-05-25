@@ -11,12 +11,11 @@ const fetchBooksLoading = () => ({
   type: FETCH_BOOKS_LOADING,
 })
 
-const fetchBooksSuccess = ({ numPages, books, currentPage }) => ({
+const fetchBooksSuccess = ({ numPages, books }) => ({
   type: FETCH_BOOKS_SUCCESS,
   payload: {
     numPages,
     books,
-    currentPage,
   },
 })
 
@@ -44,7 +43,7 @@ const fetchBooks = (searchQuery, page) => async (dispatch) => {
       page,
     })
 
-    dispatch(fetchBooksSuccess({ numPages, books, currentPage: page }))
+    dispatch(fetchBooksSuccess({ numPages, books }))
   } catch (err) {
     if (err.name === 'AbortError') {
       dispatch(fetchBooksAbort())
