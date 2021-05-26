@@ -9,6 +9,10 @@ const useQueryParams = () => {
     params[name] = value
   }
 
+  if ('p' in params) {
+    params.p = parseInt(params.p)
+  }
+
   return params
 }
 

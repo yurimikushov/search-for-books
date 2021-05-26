@@ -15,12 +15,9 @@ const useAutoTakeSearchParamsFromURL = () => {
   const fetchSuggests = useFetchSuggests()
 
   useEffect(() => {
-    if (
-      urlSearchQuery !== searchQuery ||
-      parseInt(urlSearchPage) !== searchPage
-    ) {
+    if (urlSearchQuery !== searchQuery || urlSearchPage !== searchPage) {
       setSearchQuery(urlSearchQuery)
-      setSearchPage(parseInt(urlSearchPage))
+      setSearchPage(urlSearchPage)
       fetchBooks(urlSearchQuery, urlSearchPage)
       fetchSuggests(urlSearchQuery)
     }
