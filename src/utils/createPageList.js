@@ -42,6 +42,10 @@ const createPageList = (currentPage, numPages) => {
     return []
   }
 
+  if (numPages < currentPage) {
+    return []
+  }
+
   const pageList = []
 
   if (1 < currentPage) {
