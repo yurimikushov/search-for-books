@@ -18,12 +18,8 @@ const SuggestsPopupContainer = () => {
   }
 
   return (
-    <SuggestsPopup top={top} left={left} width={width}>
-      <Suggests
-        ref={suggestsPopupRef}
-        suggests={suggests}
-        onChoose={onChooseSuggest}
-      />
+    <SuggestsPopup ref={suggestsPopupRef} top={top} left={left} width={width}>
+      <Suggests suggests={suggests} onChoose={onChooseSuggest} />
     </SuggestsPopup>
   )
 }

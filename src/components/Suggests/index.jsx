@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Suggest from './Suggest'
 import './index.css'
 
-const Suggests = forwardRef(({ suggests, onChoose }, suggestsRef) => (
-  <ul ref={suggestsRef} className='suggests'>
+const Suggests = ({ suggests, onChoose }) => (
+  <ul className='suggests'>
     {suggests.map(({ id, title, author }) => (
       <Suggest
         key={id}
@@ -14,7 +14,7 @@ const Suggests = forwardRef(({ suggests, onChoose }, suggestsRef) => (
       />
     ))}
   </ul>
-))
+)
 
 Suggests.propTypes = {
   suggests: PropTypes.arrayOf(
