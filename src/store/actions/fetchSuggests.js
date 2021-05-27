@@ -29,17 +29,18 @@ const fetchSuggestsAbort = () => ({
   type: FETCH_SUGGESTS_ABORT,
 })
 
-const EVENT_NAME_OF_FETCHING_SUGGESTS = 'fetchSuggests'
+const FETCH_NAME = 'fetchSuggests'
 
 const fetchSuggests = (query) => async (dispatch) => {
-  abortFetch(EVENT_NAME_OF_FETCHING_SUGGESTS)
+  abortFetch(FETCH_NAME)
 
   dispatch(fetchSuggestsLoading())
 
   try {
     const suggests = await fetchSuggestsFromServer(query, {
-      name: EVENT_NAME_OF_FETCHING_SUGGESTS,
+      name: FETCH_NAME,
     })
+
     dispatch(fetchSuggestsSuccess(suggests))
   } catch (err) {
     if (err.name === 'AbortError') {

@@ -30,16 +30,16 @@ const fetchBooksAbort = () => ({
   type: FETCH_BOOKS_ABORT,
 })
 
-const EVENT_NAME_OF_FETCHING_BOOKS = 'fetchBooks'
+const FETCH_NAME = 'fetchBooks'
 
 const fetchBooks = (searchQuery, page) => async (dispatch) => {
-  abortFetch(EVENT_NAME_OF_FETCHING_BOOKS)
+  abortFetch(FETCH_NAME)
 
   dispatch(fetchBooksLoading())
 
   try {
     const { numPages, books } = await fetchBooksFromServer(searchQuery, {
-      name: EVENT_NAME_OF_FETCHING_BOOKS,
+      name: FETCH_NAME,
       page,
     })
 
