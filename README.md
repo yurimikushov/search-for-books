@@ -16,15 +16,15 @@ A snippet list of a found books must be displayed under a search bar. A snippet 
 
 The app must display a more info about a found book (a scaled book cover, a title, an author name, a publishing date, a publisher name and ISBN code) in a modal window after any click on a snippet of a found book.
 
-### Особенности
+### Peculiar properties
 
-Приложение должно быть одностраничным.
-Спустя секунду после ввода последнего символа текста в поисковую строку должен автоматически стартовать поиск книг. Если в течение секунды пользователь вводит дополнительный символ, таймер должен сбрасываться.
-Верстка должна «растягиваться» от мобильных экранов до больших мониторов.
-Все запросы с клиента должны идти в API Open Library.
-Приложение должно быть написано на React + Redux.
-Сборка должна осуществляться через webpack командой npm run build.
-Запрещено использовать сторонние UI-библиотеки, например, Twitter Bootstrap.
+The app must be a SPA.
+A book searching must get started automatically after a second after type a last letter of a search query. If a user types yet an one letter within a second, then the timer must get restarted.
+A layout must adaptive for a mobile and desktop.
+All search requests must call the API Open Library.
+The app must be written on React + Redux.
+A build must run on Webpack by `npm run build` command.
+Prohibited to use a third party UI libraries, e.g. Twitter Bootstrap.
 
 ### API
 
