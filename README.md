@@ -28,11 +28,13 @@ Prohibited to use a third party UI libraries, e.g. Twitter Bootstrap.
 
 ### API
 
-Для получения данных о книгах используйте [API Open Library](https://openlibrary.org/developers/api).
+Use the [API Open Library](https://openlibrary.org/developers/api) for fetching a books data.
 
-Для поиска книг используйте [Search API](https://openlibrary.org/dev/docs/api/search).
+Use the [Search API](https://openlibrary.org/dev/docs/api/search) for a books searching.
 
-Идентификатор обложки книги приходит в ответе поиска. Для получения обложки книги используйте [Cover API](https://openlibrary.org/dev/docs/api/covers).
+An identificator of a book cover is contained in a search response.
+
+Use the [Cover API](https://openlibrary.org/dev/docs/api/covers) for fetching a book cover.
 
 ### Дополнительная информация
 
