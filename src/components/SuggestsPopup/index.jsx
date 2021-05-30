@@ -8,7 +8,7 @@ const SuggestsPopup = forwardRef(
     createPortal(
       <div
         ref={suggestsRef}
-        className='suggests-popup__content'
+        className='suggests-popup'
         style={{
           top,
           left,
@@ -17,7 +17,7 @@ const SuggestsPopup = forwardRef(
       >
         {children}
       </div>,
-      document.querySelector('.suggests-popup')
+      document.querySelector('.suggests-popup-portal')
     )
 )
 

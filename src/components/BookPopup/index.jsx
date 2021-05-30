@@ -5,12 +5,14 @@ import './index.css'
 
 const BookPopup = forwardRef(({ children }, bookPopupRef) =>
   createPortal(
-    <div className='book-popup__overlay'>
-      <div ref={bookPopupRef} className='book-popup__content'>
-        {children}
+    <div className='book-popup'>
+      <div className='book-popup__overlay'>
+        <div ref={bookPopupRef} className='book-popup__content'>
+          {children}
+        </div>
       </div>
     </div>,
-    document.querySelector('.book-popup')
+    document.querySelector('.book-popup-portal')
   )
 )
 

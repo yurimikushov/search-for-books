@@ -1,4 +1,4 @@
-.suggests-popup__content {
+.suggests-popup {
   position: absolute;
   z-index: var(--z-suggests-popup);
 }
