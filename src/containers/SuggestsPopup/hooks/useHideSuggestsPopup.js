@@ -5,6 +5,10 @@ const useHideSuggestsPopup = (suggestsPopupRef) => {
   const { show, onHide } = useSuggestsPopup()
 
   useEffect(() => {
+    if (!show) {
+      return
+    }
+
     const { current: suggestsPopup } = suggestsPopupRef
 
     const onCloseHandler = ({ target }) => {
