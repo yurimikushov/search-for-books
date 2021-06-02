@@ -28,6 +28,11 @@ body {
   width: 100%;
   height: 100vh;
   background-color: var(--color-app-bg);
+
+  /* FIXME: don't should use this prop.
+  This prop is used to position correctly of the suggests popup,
+  when a list of found books becomes too much */
+  overflow-y: scroll;
 }
 
 button {
