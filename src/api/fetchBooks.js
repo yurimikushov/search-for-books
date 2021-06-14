@@ -1,5 +1,5 @@
 import {
-  normalizeQuery,
+  normalizeSearchQuery,
   createSearchURL,
   abortableFetch,
   docToBook,
@@ -12,8 +12,8 @@ const options = {
   fields: ['title', 'author_name', 'isbn', 'publisher', 'publish_date'],
 }
 
-const fetchBooks = async (query, { name, page = 1 }) => {
-  const normalizedQuery = normalizeQuery(query)
+const fetchBooks = async (searchQuery, { name, page = 1 }) => {
+  const normalizedQuery = normalizeSearchQuery(searchQuery)
 
   if (normalizedQuery.length === 0) {
     return {

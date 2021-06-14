@@ -1,9 +1,9 @@
 import { SET_SEARCH_QUERY } from 'store/actionTypes'
 
-const setSearchQuery = (query) => ({
+const setSearchQuery = (searchQuery) => ({
   type: SET_SEARCH_QUERY,
   payload: {
-    query,
+    searchQuery,
   },
 })
 

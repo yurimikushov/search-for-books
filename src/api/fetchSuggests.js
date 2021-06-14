@@ -1,5 +1,5 @@
 import {
-  normalizeQuery,
+  normalizeSearchQuery,
   createSearchURL,
   abortableFetch,
   docToSuggest,
@@ -11,8 +11,8 @@ const options = {
   page: 1,
 }
 
-const fetchSuggests = async (query, { name }) => {
-  const normalizedQuery = normalizeQuery(query)
+const fetchSuggests = async (searchQuery, { name }) => {
+  const normalizedQuery = normalizeSearchQuery(searchQuery)
 
   if (normalizedQuery.length === 0) {
     return []

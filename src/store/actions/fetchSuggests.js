@@ -31,13 +31,13 @@ const fetchSuggestsAbort = () => ({
 
 const FETCH_NAME = 'fetchSuggests'
 
-const fetchSuggests = (query) => async (dispatch) => {
+const fetchSuggests = (searchQuery) => async (dispatch) => {
   abortFetch(FETCH_NAME)
 
   dispatch(fetchSuggestsLoading())
 
   try {
-    const suggests = await fetchSuggestsFromServer(query, {
+    const suggests = await fetchSuggestsFromServer(searchQuery, {
       name: FETCH_NAME,
     })
 

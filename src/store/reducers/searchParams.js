@@ -10,7 +10,7 @@ const searchParamsReducer = (state = initialState, { type, payload }) => {
     case SET_SEARCH_QUERY:
       return {
         ...state,
-        query: payload.query,
+        query: payload.searchQuery,
       }
     case SET_SEARCH_PAGE:
       return {

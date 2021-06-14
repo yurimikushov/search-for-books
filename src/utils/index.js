@@ -1,5 +1,5 @@
 export { debounce } from './debounce'
-export { normalizeQuery } from './normalizeQuery'
+export { normalizeSearchQuery } from './normalizeSearchQuery'
 export { createSearchURL } from './createSearchURL'
 export { docToSuggest } from './docToSuggest'
 export { docToBook } from './docToBook'

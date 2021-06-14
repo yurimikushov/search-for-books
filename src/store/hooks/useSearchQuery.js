@@ -6,7 +6,7 @@ const useSearchQuery = () => {
 
   return [
     useSelector(({ searchParams }) => searchParams.query),
-    (query) => dispatch(setSearchQuery(query)),
+    (searchQuery) => dispatch(setSearchQuery(searchQuery)),
   ]
 }
 
