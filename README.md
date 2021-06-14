@@ -2,7 +2,7 @@
 
 I was inspired to implement this app by a test assignment, that I found on the Internet. This one you can see a little below.
 
-I haven't implementated a some requirements, but I have implemented an another features, that I made up by myself.
+I haven't implemented a some requirements, but I have implemented an another features, that I made up by myself.
 
 ## Statement	
 
