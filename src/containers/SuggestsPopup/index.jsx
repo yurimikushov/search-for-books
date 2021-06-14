@@ -1,17 +1,23 @@
 import React, { useRef } from 'react'
+import { useSearchBooks } from 'hooks'
 import { useSuggestsPopup, useSuggests } from 'store/hooks'
-import { useChooseSuggest } from 'hooks'
 import { useHideSuggestsPopup } from './hooks'
 import SuggestsPopup from 'components/SuggestsPopup'
 import Suggests from 'components/Suggests'
 
 const SuggestsPopupContainer = () => {
   const suggestsPopupRef = useRef()
-  const { show, top, left, width } = useSuggestsPopup()
-  const { suggests } = useSuggests()
-  const onChooseSuggest = useChooseSuggest()
 
   useHideSuggestsPopup(suggestsPopupRef)
+
+  const { show, top, left, width, onHide } = useSuggestsPopup()
+  const { suggests } = useSuggests()
+  const searchBooks = useSearchBooks()
+
+  const onChooseHandler = (searchQuery) => {
+    searchBooks(searchQuery)
+    onHide()
+  }
 
   if (!show) {
     return null
@@ -19,7 +25,7 @@ const SuggestsPopupContainer = () => {
 
   return (
     <SuggestsPopup ref={suggestsPopupRef} top={top} left={left} width={width}>
-      <Suggests suggests={suggests} onChoose={onChooseSuggest} />
+      <Suggests suggests={suggests} onChoose={onChooseHandler} />
     </SuggestsPopup>
   )
 }
