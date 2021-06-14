@@ -1,21 +1,21 @@
 .suggests {
-  background-color: var(--color-app-bg);
+  background-color: var(--color-white);
   list-style: none;
 }
 
 .suggest {
   padding: 10px 15px;
-  background-color: var(--color-app-bg);
+  background-color: var(--color-white);
   border-radius: 3px;
   font-size: 1rem;
   list-style: none;
 }
 
 .suggest:hover {
-  background-color: var(--color-suggest-selected);
+  background-color: var(--color-blue-light-200);
 }
 
 .suggest__author {
   margin-left: 8px;
-  color: var(--color-suggest-author);
+  color: var(--color-gray);
 }

@@ -13,8 +13,8 @@
   width: 100%;
   height: auto;
   padding: 8px 40px 8px 12px;
-  border: 2px solid var(--color-search-form);
-  background-color: var(--color-app-bg);
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-white);
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   font-size: 1rem;
   font-weight: 500;
@@ -52,9 +52,9 @@
 
 .search-form__search-btn {
   padding: 10px 30px;
-  background: var(--color-search-form);
+  background: var(--color-primary);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  color: var(--color-app-bg);
+  color: var(--color-white);
   font-size: 1rem;
   line-height: 25px;
   transition: box-shadow 0.2s;

@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 3px;
-  background-color: var(--color-page-switcher);
+  background-color: transparent;
   cursor: pointer;
   font-size: 1.1rem;
   transition: background-color 0.2s;
@@ -31,7 +31,7 @@
 }
 
 .page-switcher__item:hover {
-  background-color: var(--color-page-switcher-hovered);
+  background-color: var(--color-blue-light-100);
 }
 
 .page-switcher__item_activated {
@@ -41,5 +41,5 @@
 .page-switcher__item_activated,
 .page-switcher__item:active,
 .page-switcher__item:hover.page-switcher__item_activated {
-  background-color: var(--color-page-switcher-actived);
+  background-color: var(--color-blue-light-200);
 }
