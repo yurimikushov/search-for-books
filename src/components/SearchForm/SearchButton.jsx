@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const SearchButton = ({ onSearch }) => {
-  const onSearchHeandler = (e) => {
+  const onSearchHandler = (e) => {
     e.preventDefault()
     onSearch()
   }
@@ -11,7 +11,7 @@ const SearchButton = ({ onSearch }) => {
     <button
       className='search-form__search-btn'
       type='submit'
-      onClick={onSearchHeandler}
+      onClick={onSearchHandler}
     >
       Найти
     </button>
