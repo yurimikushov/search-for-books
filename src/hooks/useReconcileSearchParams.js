@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSearchQuery, useSearchPage } from 'store/hooks'
 import { useQueryParams } from 'hooks'
 
@@ -6,13 +7,15 @@ const useReconcileSearchParams = () => {
   const [searchQuery, setSearchQuery] = useSearchQuery()
   const [searchPage, setSearchPage] = useSearchPage()
 
-  if (searchQuery !== q) {
-    setSearchQuery(q)
-  }
+  useEffect(() => {
+    if (searchQuery !== q) {
+      setSearchQuery(q)
+    }
 
-  if (searchPage !== p) {
-    setSearchPage(p)
-  }
+    if (searchPage !== p) {
+      setSearchPage(p)
+    }
+  }, [])
 }
 
 export { useReconcileSearchParams }
