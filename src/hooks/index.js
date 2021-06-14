@@ -1,7 +1,5 @@
-export { useUpdateSearchQuery } from './useUpdateSearchQuery'
 export { useSearchBooks } from './useSearchBooks'
 export { useAutoUpdateSuggestsPopupProps } from './useAutoUpdateSuggestsPopupProps'
-export { useActivateSearchQueryField } from './useActivateSearchQueryField'
 export { useRedirect } from './useRedirect'
 export { useQueryParams } from './useQueryParams'
 export { useSaveURLSearchParamsToStore } from './useSaveURLSearchParamsToStore'
