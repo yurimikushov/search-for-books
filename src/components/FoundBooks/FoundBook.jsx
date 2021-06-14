@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 
 const FoundBook = ({ title, author, img, onOpen }) => (
   <div className='found-book' onClick={onOpen}>
-    <div
-      className='found-book__cover'
-      style={{ backgroundImage: `url(${img})` }}
-    ></div>
+    <div className='found-book__cover'>
+      <img
+        className='found-book__cover-img'
+        src={img}
+        alt={`${title} / ${author}`}
+      />
+    </div>
     <div className='found-book__info'>
       <span className='found-book__title'>{title}</span>
       <span className='found-book__author'>{author}</span>

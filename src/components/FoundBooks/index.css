@@ -4,8 +4,10 @@
 }
 
 .found-book {
+  display: flex;
   max-width: 30%;
-  flex: 0 0 30%;
+  flex: 30%;
+  flex-direction: column;
   padding: 15px;
   margin: calc(10% / 6);
   background-color: var(--color-white);
@@ -19,11 +21,20 @@
 }
 
 .found-book__cover {
-  width: 100%;
-  height: 300px;
+  position: relative;
+  padding-top: 133.33%; /* 4/3 aspect-ratio */
   background-color: var(--color-gray-light);
   background-position: center;
   background-size: cover;
+}
+
+.found-book__cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .found-book__info {
@@ -49,23 +60,15 @@
 @media screen and (max-width: 768px) {
   .found-book {
     max-width: 45%;
-    flex: 0 0 45%;
+    flex: 45%;
     margin: calc(10% / 4);
-  }
-
-  .found-book__cover {
-    height: 400px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .found-book {
     max-width: 90%;
-    flex: 0 0 90%;
+    flex: 90%;
     margin: calc(10% / 2);
-  }
-
-  .found-book__cover {
-    height: 450px;
   }
 }
