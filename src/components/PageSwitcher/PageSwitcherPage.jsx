@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const dummy = () => {}
+import { dummy } from 'utils'
 
 const PageSwitcherPage = ({ isCurrentPage, title, onSwitch }) => (
   <li
