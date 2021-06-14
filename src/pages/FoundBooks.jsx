@@ -1,6 +1,5 @@
 import React from 'react'
-import { useFetchBooks } from 'store/hooks'
-import { useReconcileSearchParams } from 'hooks'
+import { useReconcileSearchParams, useFetchBooks } from 'hooks'
 import SearchForm from 'containers/SearchForm'
 import FoundBooks from 'containers/FoundBooks'
 import PageSwitcher from 'containers/PageSwitcher'
