@@ -15,7 +15,7 @@ const SearchFormContainer = ({ style }) => {
   const onChangeHandler = useUpdateSearchQuery()
   const onActivateHandler = useActivateSearchQueryField()
   const onClearHandler = useUpdateSearchQuery()
-  const onSearchHeandler = useSearchBooks()
+  const onSearchHandler = useSearchBooks()
 
   const formRef = useRef()
   const inputBoxRef = useRef()
@@ -30,7 +30,7 @@ const SearchFormContainer = ({ style }) => {
       onChange={onChangeHandler}
       onActivate={onActivateHandler}
       onClear={onClearHandler}
-      onSearch={onSearchHeandler}
+      onSearch={onSearchHandler}
       style={style}
     />
   )
