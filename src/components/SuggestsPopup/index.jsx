@@ -40,8 +40,7 @@ SuggestsPopup.propTypes = {
   top: PropTypes.number.isRequired,
   left: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
+  onHide: PropTypes.func.isRequired,
 }
-
-SuggestsPopup.displayName = 'SuggestsPopup'
 
 export default SuggestsPopup
