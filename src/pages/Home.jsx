@@ -1,4 +1,5 @@
 import React from 'react'
+import { withLayout } from 'layouts'
 import SearchForm from 'containers/SearchForm'
 import SuggestsPopup from 'containers/SuggestsPopup'
 
@@ -12,4 +13,4 @@ const HomePage = () => (
     <SuggestsPopup />
   </>
 )
-export default HomePage
+export default withLayout(HomePage)

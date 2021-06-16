@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom'
 import Home from './pages/Home'
 import FoundBooks from './pages/FoundBooks'
-import './App.css'
 
 const App = () => (
   <Router>
