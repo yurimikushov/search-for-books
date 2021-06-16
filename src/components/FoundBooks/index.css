@@ -24,8 +24,6 @@
   position: relative;
   padding-top: 133.33%; /* 4/3 aspect-ratio */
   background-color: var(--color-gray-light);
-  background-position: center;
-  background-size: cover;
 }
 
 .found-book__cover-img {
