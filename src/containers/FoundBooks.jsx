@@ -1,9 +1,12 @@
 import React from 'react'
+import { useFetchBooks } from 'hooks'
 import { useFoundBooks, useBookPopup } from 'store/hooks'
 import Alert from 'components/Alert'
 import FoundBooks from 'components/FoundBooks'
 
 const FoundBooksContainer = () => {
+  useFetchBooks()
+
   const { isLoading, books } = useFoundBooks()
   const { onShow } = useBookPopup()
 
