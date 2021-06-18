@@ -18,6 +18,7 @@ const SearchFormContainer = ({ style }) => {
   const onChangeHandler = (searchQuery) => {
     setSearchQuery(searchQuery)
     fetchSuggests(searchQuery)
+    showSuggestsPopup()
   }
 
   const onActivateHandler = () => {
