@@ -36,6 +36,6 @@ An identificator of a book cover is contained in a search response.
 
 Use the [Cover API](https://openlibrary.org/dev/docs/api/covers) for fetching a book cover.
 
-### Дополнительная информация
+### Additional info
 
-Дизайн придумайте самостоятельно — чувство прекрасного пойдет в зачет. Будет бонусом использование TS и инструментов статического анализа кода. Остальные детали, которых не хватает в задаче, выберите на свое усмотрение.
+Come up with a UI yourself — we'll pay attention to a sense of beauty. It will be a bonus, if you use TS and a tools of a code static analyzing. An aspects, that are missed in this task, choose at your discretion.
